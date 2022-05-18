@@ -1,0 +1,199 @@
+/* ///회원가입 페이지 CSS //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+/* body */
+.reg_body {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    min-width: 700px;
+    max-width: 700px;
+}
+
+.col-lg-17{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 이미지 */
+.reg_img{
+    width: 150px; 
+    height: 65px;
+}
+
+/* 폼태그 */
+.reg_form{
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+/* 회원가입 텍스트 */
+.reg_text{
+    font-size: 30px;
+    padding-left: 10px;
+}
+
+/* 생년월일 폼 */
+.bir_yy,
+.bir_mm,
+.bir_dd {
+    width: 170px;
+    display: table-cell;
+}
+.bir_mm+.bir_dd,
+.bir_yy+.bir_mm {
+    padding-left: 10px;
+}
+
+/* 지역 폼 */
+.location_city,
+.location_county,
+.location_town {
+    width: 170px;
+    display: table-cell;
+}
+.location_county+.location_town,
+.location_city+.location_county {
+    padding-left: 10px;
+}
+
+.btn_reg{
+    text-align: center;
+    margin-bottom: 20%;
+}
+
+.btn_reg button{
+    width:50%;
+    height: 50px;
+    background-color: #F39C12;
+    font-size: 20px;
+    color : white;
+}
+
+
+/* ///로그인 페이지 CSS //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+/* 로그인페이지 body태그 */
+.login_body{
+    padding-top: 8%;
+    background: white;
+    background: linear-gradient(to right, #ffffff, rgba(255, 255, 255, 0.467));
+    min-width: 700px;
+    max-width: 2000px;
+    
+}
+
+/* 119로고 */
+.login_img{
+    width: 55%;
+}
+.img_119{
+    text-align : center;
+
+}
+
+/* form태그 */
+.login_form{
+    padding: 10%;
+}
+
+/* 아이디, 비밀번호 인풋 */
+.input-group .input-group-lg{
+    text-align : center;
+}
+
+/* 로그인 버튼 */
+.d-grid{
+    text-align : center;
+}
+
+.d-grid button{
+    background-color: #F39C12;
+}
+
+
+
+
+.bg {
+    background-image: url(./img/119char.jpg);
+    background-size: 80%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: white;
+  }
+
+.input-group {
+    margin-top: 1em;
+    margin-bottom: 1em;
+
+  }
+
+.login-box {
+    line-height: 2.3em;
+    font-size: 1em;
+    color: #aaa;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+  }
+
+.login_append {
+    overflow: hidden;
+    padding: 15px 0 0;
+  }
+
+.login_append .txt_find {
+    float: right;
+    color: #777;
+  }
+
+
+
+/* ///메인 페이지 CSS //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+.main_body{
+    margin-top: 3%;
+}
+
+.nav{
+    padding-left: 560px;
+    line-height: 86px;
+    text-align: center;
+    background-color: rgba(0,0,0,0.0);
+    
+}
+
+.nav>li{
+    margin-left: 84px;
+}
+
+.nav > li > a{
+    color: black;
+}
+
+.header{
+    width: auto;
+    margin-right: auto;
+    background-color:rgba(0,0,0,0.0);
+    height: 86px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

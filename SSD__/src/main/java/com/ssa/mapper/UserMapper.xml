@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssa.mapper.UserMapper">
+
+
+	<!-- 로그인 -->
+	<select id="UserLogin" parameterType= "com.ssa.domain.UserVO" resultType="com.ssa.domain.UserVO">
+		select * from tb_user where user_id=#{user_id} and user_pw=#{user_pw}
+	</select>
+	
+	<!-- 회원가입 -->
+	<insert id="UserJoin">
+		insert into tb_user(user_addressRegion, user_addressDo, user_addressSiGunGu, user_fs, user_rank, user_id, user_pw,
+		user_name, user_birthdate, user_address, user_address2, user_gender, user_bloodtype) 
+		values(#{user_addressRegion}, #{user_addressDo}, #{user_addressSiGunGu}, #{user_fs}, #{user_rank}, #{user_id}, #{user_pw},
+		#{user_name}, #{user_birthdate}, #{user_address}, #{user_address2},
+		#{user_gender}, #{user_bloodtype})
+	</insert>
+	
+	<!-- 아이디 중복 체크 -->
+	<select id="idCheck" parameterType="String" resultType="int">
+		SELECT COUNT(user_id) FROM tb_user WHERE user_id= #{user_id}
+	</select>
+	
+	
+	<!-- 대원 리스트확인 -->
+	<select id="UserList" resultType="com.ssa.domain.UserVO">
+		select * from tb_user
+	</select>
+	
+	<!-- 회원정보수정 -->
+	
+	<update id="change_info" parameterType="com.ssa.domain.UserVO2">
+		Update tb_user set user_team = #{user_team}, user_pw = #{user_pwCheck1}, user_address = #{user_address}, user_address2 = #{user_address2} where user_id = #{user_id} and user_pw = #{user_pw}
+	</update>
+	
+	<!-- 상태확인 -->
+	<select id="statelist" resultType="com.ssa.domain.UserVO">
+		select * from tb_user
+	</select>
+	
+	<!--게시판 리스트 -->
+   <select id="boardListCheck" resultType="com.ssa.domain.Board">
+      select * from tb_table
+   </select>
+
+  <select id="UserTeamState" parameterType="int" resultType="com.ssa.domain.UserVO">
+      select * from tb_user where user_team = #{user_team}
+   </select>
+ <select id="UserTeamList1" resultType="com.ssa.domain.UserVO">
+      select * from tb_user where user_team = '1'
+   </select>
+ <select id="UserTeamList2" resultType="com.ssa.domain.UserVO">
+      select * from tb_user where user_team = '2'
+   </select>
+ <select id="UserTeamList3" resultType="com.ssa.domain.UserVO">
+      select * from tb_user where user_team = '3'
+   </select>
+   
+   <select id="UserTeamCount1" resultType="int">
+      select count( * ) from tb_user where user_team = '1'
+   </select>
+ <select id="UserTeamCount2" resultType="int">
+      select count( * ) from tb_user where user_team = '2'
+   </select>
+ <select id="UserTeamCount3" resultType="int">
+      select count( * ) from tb_user where user_team = '3'
+   </select>
+   
+   
+   
+   <!-- 대원 아이디 리스트확인 -->
+   <select id="UserListId" resultType="com.ssa.domain.UserVO">
+      select * from tb_user where user_id=#{user_id}
+   </select>
+
+
+<!-- 대원 팀 리스트확인 -->
+   <select id="UserTeamList" resultType="com.ssa.domain.UserVO">
+      select * from tb_user where user_team=#{user_team}
+   </select>
+   
+   <!-- 대원 팀 리스트확인 -->
+   <select id="UserTemp" resultType="com.ssa.domain.Shoulder">
+      select * from tb_shoulder where user_id=#{user_id}
+   </select>
+   
+   <!-- 대원 상태확인 -->
+   <select id="UserTempState" parameterType="String" resultType="com.ssa.domain.Shoulder">
+      select * from tb_shoulder where user_id=#{user_id} and 1 ORDER BY s_seq DESC LIMIT 1
+   </select>
+   
+   
+</mapper>
+
