@@ -143,47 +143,52 @@
                         </div>
                     </div> -->
                 </div>
-
-                <div class="row g-4">
                 
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="team-item rounded overflow-hidden">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="resources/img/team-2.jpg" alt="">
-                                <div
-                                    class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
-                                    <!-- 심장박동수(하드웨어) 아이콘 수정?-->
-                                    <a class="btn btn-square mx-1" id="heartbeat"><i
-                                            class="fa-solid fa-heart  fa-2xs"></i>190</a>
-                                    <!-- 심전?(하드웨어) -->
-                                    <a class="btn btn-square mx-1" id="SPO2">90%</a>
-                                    <!-- 모니터링(하드웨어) -->
-                                    <a class="btn btn-square mx-1" href="/monitoring?user_id=${vo.user_id}"><i
-                                            class="fa-solid fa-video"></i></a>
-                                </div>
-                            </div>
-                            <div class="text-center p-4 mt-3">
-                                <!-- 이름(백) -->
-                                <!-- 상태가 정상일 경우 -->
-                                <h5 class="fw-bold mb-0""><i class="fa-solid fa-badge-check"></i></i>${vo.user_name}</h5>
-                                <!-- 상태가 비정상일 경우 -->
-                                <h5 class="fw-bold mb-0" style="color: crimson; margin-right:20px;"><i class="fa fa-light fa-triangle-exclamation"></i>${vo.user_name}</h5>
-                                <!-- 상태(?) -->
-                                <small>대기</small>
-                            </div>
+                
+                
+                
+                
+                
+                 <div class="row g-4">
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="team-item rounded overflow-hidden">
+                    <div class="position-relative" style="display:flex; justify-content: center;margin-top: 20px; ">
+                        <img class="img-fluid" src="resources/img/team-1.jpg" alt="" width="200px">
+                        
+                        
+                        <div
+                            class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
+                            <!-- 심장박동수(하드웨어) 아이콘 수정?-->
+                                  <button type="button" class="btn btn-outline-light btn-square-md" data-mdb-ripple-color="dark" id = heartbeat>
+                                      <!-- 심박값 -->
+                                        <h5 style="margin-bottom:0px; color:#F39C12;">190</h5></button>     
+                                        <button type="button" class="btn btn-outline-light btn-square-md" data-mdb-ripple-color="dark"  id="SPO2">
+                                            <!-- 산소포화도값 -->
+                                            <h5 style="margin-bottom:0px; color:#F39C12;">90%</h5></button>     
+                                            <button type="button" class="btn btn-outline-light btn-square-md"  onclick="location.href='/monitoring?user_id=${vo.user_id}'" data-mdb-ripple-color="dark">
+                                                <i
+                                    class="fa-solid fa-video"></i></button>       
                         </div>
                     </div>
-
+                    <div class="text-center p-4 mt-3">
+                        <!-- 이름(백) -->
+                        <!-- 상태가 정상일 경우 -->
+                        <!-- <h5 class="fw-bold mb-0""><i class="fa-solid fa-badge-check"></i></i>한수진</h5> -->
+                        <!-- 상태가 비정상일 경우 -->
+                        <h5 class="fw-bold mb-0" style="color: crimson; margin-right:20px;"><i class="fa fa-light fa-triangle-exclamation"></i>${vo.user_name}</h5>
+                        <!-- 상태(?) -->
+                        <small>대기</small>
+                    </div>
                 </div>
-
             </div>
+
         </div>
-        </c:forEach>
-        <!-- Team End -->
+</div>
+</div>
 
+</c:forEach>
 
-       
-
+        
 
        <!-- Footer Start -->
         <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
