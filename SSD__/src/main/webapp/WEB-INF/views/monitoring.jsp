@@ -239,7 +239,7 @@
 											<div class="video-container"
 												style="display: flex; justify-content: center; align-items: center; height: 542px;">
 												<div class="video-play-area">
-													<img src="http://172.30.1.14:5000/stream.mjpg" />
+													<img src="http://192.168.72.39:5000/stream.mjpg" />
 												</div>
 											</div>
 										</div>
