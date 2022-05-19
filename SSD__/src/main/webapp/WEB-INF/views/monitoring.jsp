@@ -422,7 +422,7 @@
 function getData(){
 $.ajax({
 	type: "GET",
-	url: "${pageContext.request.contextPath}/api/temp/admin",
+	url: "${pageContext.request.contextPath}/api/temp/${UserListIdCheck.user_id}",
 	success: function(res){
 		console.log(res)
 		console.log(res[res.length-1].temp)
