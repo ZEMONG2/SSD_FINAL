@@ -162,6 +162,21 @@ public class UserController {
 		return "monitoring";
 	}
 	
+	@PostMapping("/change_state")
+	public String ChangeState(UserVO vo) {
+		
+		try {
+			UserService.ChangeState(vo);
+			System.out.println("근태 저장완료");
+			System.out.println("근태 : "+vo.getUser_state());
+			System.out.println("아이디 : "+vo.getUser_id());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "redirect:/change_info";
+	}
+	
 	
 	
 }

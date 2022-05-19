@@ -30,6 +30,10 @@ public interface UserService {
 	// 상태확인
 	public ArrayList<UserVO> statelist();
 	
+	//근태업데이트
+	public void ChangeState(UserVO vo);
+
+	
 	public ArrayList<UserVO> UserTeamState(int user_team);
 	public ArrayList<Shoulder> UserTempState(String user_id);
 	

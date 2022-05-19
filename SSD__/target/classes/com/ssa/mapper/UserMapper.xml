@@ -95,5 +95,7 @@
       select * from tb_shoulder where user_id=#{user_id} and 1 ORDER BY s_seq DESC LIMIT 1
    </select>
    
-   
+    <update id="ChangeState" parameterType="com.ssa.domain.UserVO">
+   	update tb_user set user_state=#{user_state} where user_id = #{user_id}
+   </update>
 </mapper>

@@ -50,4 +50,6 @@ public interface UserMapper {
 	public UserVO UserListIdCheck(String user_id);
 	public ArrayList<UserVO> UserTeamList(int user_team);
 	public ArrayList<Shoulder> UserTemp(String user_id);
+	
+	public UserVO ChangeState(UserVO vo);
 }

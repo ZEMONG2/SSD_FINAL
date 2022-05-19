@@ -143,6 +143,7 @@
 							<div id="collapseOne1" class="accordion-collapse collapse">
 								<!-- 아코디언 바디 -->
 								<div class="accordion-body">
+						<form action="/change_state" method="POST">
 						<table class="table table-hover">
 					<thead>
 					</thead>
@@ -152,7 +153,7 @@
 							<th scope="col">계급</th>
 							<th scope="col">아이디</th>
 							<th scope="col" style="width: 200px;">근태</th>
-							<th scope="col">수정</th>
+							<th scope="col">저장</th>
 						</tr>
 					<tbody>
 					<c:forEach var="vo" items="${User_list1}">
@@ -161,32 +162,33 @@
 							<td>구조 1팀</td>
 							<td>${vo.user_name}</td>
 							<td>${vo.user_rank}</td>
-							<td>${vo.user_id}</td>
+							<td id="user_id" value="${vo.user_id}">${vo.user_id}</td>
 							<td>
 								<select class="form-select"
-									aria-label="Default select example">
+									aria-label="Default select example" id="user_state">
 										<option selected>근태</option>
-										<option value="1">출동</option>
-										<option value="2">대기</option>
-										<option value="3">연차</option>
+										<option value="출동">출동</option>
+										<option value="대기">대기</option>
+										<option value="연차">연차</option>
 								</select>
 							</td>
 							<td>
-								<button type="button" class="btn btn-default"
+							
+							<button type="submit" class="btn btn-success" > 저장</button>
+								<!-- <button type="button" class="btn btn-default"
 									onclick="location.href='mypage'"
 									style="padding-top: 0px; padding-bottom: 0px;">
 									<i class="fa-solid fa-pen"></i>
-								</button>
+								</button> -->
 							</td>
 						</tr>	
 						
 						</c:forEach>
 					</tbody>		
 				</table>
+				</form>
 								</div>
-						<div style="text-align:center; ">
-						<button type="button" class="btn btn-success"> 저장</button><br><br>
-						</div>
+						
 						</div>
 
 					</div>
@@ -210,7 +212,7 @@
 							<th scope="col">계급</th>
 							<th scope="col">아이디</th>
 							<th scope="col" style="width: 200px;">근태</th>
-							<th scope="col">수정</th>
+							<th scope="col">저장</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -228,20 +230,16 @@
 									<option value="2">대기</option>
 									<option value="3">연차</option>
 							</select></th>
-							<th><button type="button" class="btn btn-default"
-									onclick="location.href='mypage'"
-									style="padding-top: 0px; padding-bottom: 0px;">
-									<i class="fa-solid fa-pen"></i>
-								</button></th>
+							<th>
+							<button type="button" class="btn btn-success"> 저장</button>
+								</th>
 							</tr>
 					</c:forEach>
 					</tbody>
 				</table>
 								</div>
 								
-								<div style="text-align:center; ">
-						<button type="button" class="btn btn-success"> 저장</button><br><br>
-						</div>
+								
 						</div>
 
 					</div>
@@ -265,7 +263,7 @@
 							<th scope="col">계급</th>
 							<th scope="col">아이디</th>
 							<th scope="col" style="width: 200px;">근태</th>
-							<th scope="col">수정</th>
+							<th scope="col">저장</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -283,275 +281,23 @@
 									<option value="2">대기</option>
 									<option value="3">연차</option>
 							</select></th>
-							<th><button type="button" class="btn btn-default"
-									onclick="location.href='mypage'"
-									style="padding-top: 0px; padding-bottom: 0px;">
-									<i class="fa-solid fa-pen"></i>
-								</button></th>
+							<th>
+								<button type="button" class="btn btn-success"> 저장</button>
+								</th>
 									</tr>
 							</c:forEach>
 				</tbody>
 				</table>
 								</div>
 								
-								<div style="text-align:center; ">
-						<button type="button" class="btn btn-success"> 저장</button><br><br>
-						</div>
+							
 						</div>
 
 					</div>
 				</div>
 			<br>
 	
-				<!-- 여가 -->
-				<!-- <table class="table table-hover">
-					<thead>
-						<tr>
-							<th scope="col">팀원보기</th>
-							<th scope="col">소속팀</th>
-							<th scope="col">이름</th>
-							<th scope="col">계급</th>
-							<th scope="col">아이디</th>
-							<th scope="col" style="width: 200px;">근태</th>
-							<th scope="col">수정</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr style="vertical-align: middle;">
-							<th><button id="memberBtn1" class="btn" scope="row"
-									type="button" data-bs-toggle="collapse"
-									data-bs-target="#collapseExample1" aria-expanded="false"
-									aria-controls="collapseExample">
-									<i class="fa-solid fa-users"></i>
-								</button></th>
-							<th>유재열팀</th>
-							<th>유재열</th>
-							<th>계급</th>
-							<th>아이디</th>
-							<th><select class="form-select"
-								aria-label="Default select example">
-									<option selected>근태</option>
-									<option value="1">출동</option>
-									<option value="2">대기</option>
-									<option value="3">연차</option>
-							</select></th>
-							<th><button type="button" class="btn btn-default"
-									onclick="location.href='mypage'"
-									style="padding-top: 0px; padding-bottom: 0px;">
-									<i class="fa-solid fa-pen"></i>
-								</button></th>
-						<tr class="collapse" id="collapseExample1">
-							<td></td>
-							<td>유재열팀</td>
-							<td>양대성</td>
-							<td>계급</td>
-							<td>아이디</td>
-							<td><select class="form-select"
-								aria-label="Default select example">
-									<option selected>근태</option>
-									<option value="1">출동</option>
-									<option value="2">대기</option>
-									<option value="3">연차</option>
-							</select></td>
-							<td><button type="button" class="btn btn-default"
-									onclick="location.href='mypage'"
-									style="padding-top: 0px; padding-bottom: 0px;">
-									<i class="fa-solid fa-pen"></i>
-								</button></td>
-						</tr>
-						<tr class="collapse" id="collapseExample1"
-							style="border-bottom: 3px solid black;">
-							<td></td>
-							<td>유재열팀</td>
-							<td>김유리</td>
-							<td>계급</td>
-							<td>아이디</td>
-							<td><select class="form-select"
-								aria-label="Default select example">
-									<option selected>근태</option>
-									<option value="1">출동</option>
-									<option value="2">대기</option>
-									<option value="3">연차</option>
-							</select></td>
-							<td><button type="button" class="btn btn-default"
-									onclick="location.href='mypage'"
-									style="padding-top: 0px; padding-bottom: 0px;">
-									<i class="fa-solid fa-pen"></i>
-								</button></td>
-						</tr>
-						</tr>
-
-
-						<tr style="vertical-align: middle;">
-							<th><button id="memberBtn2" class="btn" scope="row"
-									type="button" data-bs-toggle="collapse"
-									data-bs-target="#collapseExample2" aria-expanded="false"
-									aria-controls="collapseExample">
-									<i class="fa-solid fa-users"></i>
-								</button></th>
-							<th>한수진팀</th>
-							<th>한수진</th>
-							<th>계급</th>
-							<th>아이디</th>
-							<th><select class="form-select"
-								aria-label="Default select example">
-									<option selected>근태</option>
-									<option value="1">출동</option>
-									<option value="2">대기</option>
-									<option value="3">연차</option>
-							</select></th>
-							<th><button type="button" class="btn btn-default"
-									onclick="location.href='mypage'"
-									style="padding-top: 0px; padding-bottom: 0px;">
-									<i class="fa-solid fa-pen"></i>
-								</button></th>
-						<tr class="collapse" id="collapseExample2">
-							<td></td>
-							<td>한수진팀</td>
-							<td>양대성</td>
-							<td>계급</td>
-							<td>아이디</td>
-							<td><select class="form-select"
-								aria-label="Default select example">
-									<option selected>근태</option>
-									<option value="1">출동</option>
-									<option value="2">대기</option>
-									<option value="3">연차</option>
-							</select></td>
-							<td><button type="button" class="btn btn-default"
-									onclick="location.href='mypage'"
-									style="padding-top: 0px; padding-bottom: 0px;">
-									<i class="fa-solid fa-pen"></i>
-								</button></td>
-						</tr>
-						<tr class="collapse" id="collapseExample2"
-							style="border-bottom: 3px solid black;">
-							<td></td>
-							<td>한수진팀</td>
-							<td>김유리</td>
-							<td>계급</td>
-							<td>아이디</td>
-							<td><select class="form-select"
-								aria-label="Default select example">
-									<option selected>근태</option>
-									<option value="1">출동</option>
-									<option value="2">대기</option>
-									<option value="3">연차</option>
-							</select></td>
-							<td><button type="button" class="btn btn-default"
-									onclick="location.href='mypage'"
-									style="padding-top: 0px; padding-bottom: 0px;">
-									<i class="fa-solid fa-pen"></i>
-								</button></td>
-
-						</tr>
-						</tr>
-
-
-						<tr style="vertical-align: middle;">
-							<th><button id="memberBtn3" class="btn" scope="row"
-									type="button" data-bs-toggle="collapse"
-									data-bs-target="#collapseExample3" aria-expanded="false"
-									aria-controls="collapseExample">
-									<i class="fa-solid fa-users"></i>
-								</button></th>
-							<th>박승현팀</th>
-							<th>박승현</th>
-							<th>계급</th>
-							<th>아이디</th>
-							<th><select class="form-select"
-								aria-label="Default select example">
-									<option selected>근태</option>
-									<option value="1">출동</option>
-									<option value="2">대기</option>
-									<option value="3">연차</option>
-							</select></th>
-							<th><button type="button" class="btn btn-default"
-									onclick="location.href='mypage'"
-									style="padding-top: 0px; padding-bottom: 0px;">
-									<i class="fa-solid fa-pen"></i>
-								</button></th>
-						<tr class="collapse" id="collapseExample3">
-							<td></td>
-							<td>박승현팀</td>
-							<td>양대성</td>
-							<td>계급</td>
-							<td>아이디</td>
-							<td><select class="form-select"
-								aria-label="Default select example">
-									<option selected>근태</option>
-									<option value="1">출동</option>
-									<option value="2">대기</option>
-									<option value="3">연차</option>
-							</select></td>
-							<td><button type="button" class="btn btn-default"
-									onclick="location.href='mypage'"
-									style="padding-top: 0px; padding-bottom: 0px;">
-									<i class="fa-solid fa-pen"></i>
-								</button></td>
-						</tr>
-						<tr class="collapse" id="collapseExample3"
-							style="border-bottom: 3px solid black;">
-							<td></td>
-							<td>박승현팀</td>
-							<td>김유리</td>
-							<td>계급</td>
-							<td>아이디</td>
-							<td><select class="form-select"
-								aria-label="Default select example">
-									<option selected>근태</option>
-									<option value="1">출동</option>
-									<option value="2">대기</option>
-									<option value="3">연차</option>
-							</select></td>
-							<td><button type="button" class="btn btn-default"
-									onclick="location.href='mypage'"
-									style="padding-top: 0px; padding-bottom: 0px;">
-									<i class="fa-solid fa-pen"></i>
-								</button></td>
-						</tr>
-						</tr>
-					</tbody>
-				</table> -->
-
-				<!-- 여기 -->
-
-				<!-- <table class="table table-hover">
-                    <thead>
-                      <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">소속팀</th>
-                        <th scope="col">이름</th>
-                        <th scope="col">계급</th>
-                        <th scope="col">아이디</th>
-                        <th scope="col">수정</th>
-                      </tr>
-                    </thead> -->
-				<!-- 값 넣는 부분(백) -->
-				<!-- <tbody>
-
-                      <tr>
-                        <th scope="row">1</th>
-
-                        <td>유재열팀</td>
-                        <td>한수진</td>
-                        <td>사람</td>
-                        <td>sujin0422</td>
-                        <td><button type="button" class="btn btn-default" onclick="location.href='user_info_page.html'" style="padding-top: 0px;padding-bottom: 0px;"><i class="fa-solid fa-pen"></i></button></td>
-                      </tr>
-
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>유재열팀</td>
-                        <td>두수진</td>
-                        <td>사람</td>
-                        <td>sujin0825</td>
-                        <td><button type="button" class="btn btn-default" onclick="location.href='user_info_page.html'" style="padding-top: 0px;padding-bottom: 0px;"><i class="fa-solid fa-pen"></i></button></td>
-                      </tr>
-
-                    </tbody>
-                  </table>
- -->
+	
 
 
 			</div>
@@ -658,4 +404,3 @@
 	<script src="resources/js/main.js"></script>
 </body>
 
-</html>

@@ -146,4 +146,11 @@ public class UserServiceImple implements UserService {
 		System.out.println("Service : " + list);
 		return list;
 	}
+	
+	// 근태 업데이트
+		@Override
+		public void ChangeState(UserVO vo) {
+			mapper.ChangeState(vo);
+		}
+
 }
