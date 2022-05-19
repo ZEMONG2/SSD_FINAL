@@ -64,80 +64,78 @@ public class UserServiceImple implements UserService {
 		System.out.println("Service : " + list);
 		return list;
 	}
-	
-	
-	  @Override
-	  public ArrayList<UserVO> UserTeamState(int user_team){
-		  ArrayList<UserVO> list = mapper.UserTeamState(user_team);
-		  return list;
-	  }
-	  @Override
-	  public ArrayList<Shoulder> UserTempState(String user_id){
-		  ArrayList<Shoulder> list = mapper.UserTempState(user_id);
-		  return list;
-	  }
-	 
-	
+
 	@Override
-	public ArrayList<UserVO> UserTeamList1(){
+	public ArrayList<UserVO> UserTeamState(int user_team) {
+		ArrayList<UserVO> list = mapper.UserTeamState(user_team);
+		return list;
+	}
+
+	@Override
+	public ArrayList<Shoulder> UserTempState(String user_id) {
+		ArrayList<Shoulder> list = mapper.UserTempState(user_id);
+		return list;
+	}
+
+	@Override
+	public ArrayList<UserVO> UserTeamList1() {
 		ArrayList<UserVO> list = mapper.UserTeamList1();
 		return list;
 	}
+
 	@Override
-	public ArrayList<UserVO> UserTeamList2(){
+	public ArrayList<UserVO> UserTeamList2() {
 		ArrayList<UserVO> list = mapper.UserTeamList2();
 		return list;
 	}
+
 	@Override
-	public ArrayList<UserVO> UserTeamList3(){
+	public ArrayList<UserVO> UserTeamList3() {
 		ArrayList<UserVO> list = mapper.UserTeamList3();
 		return list;
 	}
-	
+
 	// 유저 조회
-    @Override
-    public ArrayList<UserVO> UserListId(String user_id) {
-       ArrayList<UserVO> list = mapper.UserListId(user_id);
-       System.out.println("Service : " + list);
-       return list;
-    }
-    
-    // 팀 조회
-          @Override
-          public ArrayList<UserVO> UserTeamList(int user_team) {
-             ArrayList<UserVO> list = mapper.UserTeamList(user_team);
-             System.out.println("Service : " + list);
-             return list;
-          }
-          
-          
-      	@Override
-        public int UserTeamCount1() {
-           int teamCnt = mapper.UserTeamCount1();
-           System.out.println("Service : " + teamCnt);
-           return teamCnt;
-        }
-      	
-      	@Override
-        public int UserTeamCount2() {
-           int teamCnt = mapper.UserTeamCount2();
-           System.out.println("Service : " + teamCnt);
-           return teamCnt;
-        }
-      	
-      	@Override
-        public int UserTeamCount3() {
-           int teamCnt = mapper.UserTeamCount3();
-           System.out.println("Service : " + teamCnt);
-           return teamCnt;
-        }
-          
-          
-          
-   	@Override
-    public ArrayList<Shoulder> UserTemp(String user_id) {
-       ArrayList<Shoulder> list = mapper.UserTemp(user_id);
-       System.out.println("Service : " + list);
-       return list;
-    }
+	@Override
+	public ArrayList<UserVO> UserListId(String user_id) {
+		ArrayList<UserVO> list = mapper.UserListId(user_id);
+		System.out.println("Service : " + list);
+		return list;
+	}
+
+	// 팀 조회
+	@Override
+	public ArrayList<UserVO> UserTeamList(int user_team) {
+		ArrayList<UserVO> list = mapper.UserTeamList(user_team);
+		System.out.println("Service : " + list);
+		return list;
+	}
+
+	@Override
+	public int UserTeamCount1() {
+		int teamCnt = mapper.UserTeamCount1();
+		System.out.println("Service : " + teamCnt);
+		return teamCnt;
+	}
+
+	@Override
+	public int UserTeamCount2() {
+		int teamCnt = mapper.UserTeamCount2();
+		System.out.println("Service : " + teamCnt);
+		return teamCnt;
+	}
+
+	@Override
+	public int UserTeamCount3() {
+		int teamCnt = mapper.UserTeamCount3();
+		System.out.println("Service : " + teamCnt);
+		return teamCnt;
+	}
+
+	@Override
+	public ArrayList<Shoulder> UserTemp(String user_id) {
+		ArrayList<Shoulder> list = mapper.UserTemp(user_id);
+		System.out.println("Service : " + list);
+		return list;
+	}
 }

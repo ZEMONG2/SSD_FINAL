@@ -214,10 +214,10 @@ pageContext.setAttribute("newLine", "\n");
 							<h5 class="text-white mb-4">Contact</h5>
 							<!--주소 넣기(백)-->
 							<p class="mb-2">
-								<i class="fa fa-map-marker-alt me-3"></i>주소 넣어주세요
+								<i class="fa fa-map-marker-alt me-3"></i>광주광역시 동구 예술길 31-15
 							</p>
 							<p class="mb-2">
-								<i class="fa fa-phone-alt me-3"></i>+119
+								<i class="fa fa-phone-alt me-3"></i>062-655-3506, 9
 							</p>
 							<div class="d-flex pt-2">
 								<a class="btn btn-outline-light btn-social" href=""><i

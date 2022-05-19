@@ -116,18 +116,17 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarCollapse">
 					<div class="navbar-nav ms-auto">
-						<a href="/main" class="nav-item nav-link  active">Home</a> <a
-							href="/map" class="nav-item nav-link ">Map</a> <a
-							href="/team_member" class="nav-item nav-link ">Team Member</a>
+						<a href="/main" class="nav-item nav-link  active">메인</a> 
+						<a href="/map" class="nav-item nav-link ">지도</a> 
+						<a href="/team" class="nav-item nav-link ">팀</a>
 						<%-- <c:if test="${LoginVo.user_admin eq 'Y'}">
               <a href="/team" class="nav-item nav-link">대원관리</a>
               <!-- 관리자의 경우 끝 -->
               </c:if> --%>
 						<!-- 모니터링 페이지 이동 예정 -->
-						<a href="/monitoring" class="nav-item nav-link ">Monitoring</a> <a
-							href="/mypage" class="nav-item nav-link">mypage</a> <a
-							href="/change_info" class="nav-item nav-link">change_info</a> <a
-							href="/boardList" class="nav-item nav-link">공지사항</a>
+						 <a href="/mypage" class="nav-item nav-link">마이페이지</a> 
+						 <a href="/change_info" class="nav-item nav-link">회원정보수정</a> 
+						 <a href="/boardList" class="nav-item nav-link">공지사항</a>
 
 
 
@@ -189,10 +188,12 @@
 		<!-- Category Start -->
 		<div class="container-xxl py-5">
 			<div class="container">
+			<c:if test="${!empty LoginVo}">
 				<div class="text-center mx-auto mb-5 wow fadeInUp"
 					data-wow-delay="0.1s" style="max-width: 600px;">
-					<h1 class="mb-3">00소방서</h1>
+					<h1 class="mb-3">${LoginVo.user_fs }</h1>
 				</div>
+				</c:if>
 				<!-- 공지 시작 -->
 				<div class="container">
 
@@ -249,10 +250,10 @@
 								<h5 class="text-white mb-4">Contact</h5>
 								<!--주소 넣기(백)-->
 								<p class="mb-2">
-									<i class="fa fa-map-marker-alt me-3"></i>주소 넣어주세요
+									<i class="fa fa-map-marker-alt me-3"></i>광주광역시 동구 예술길 31-15 
 								</p>
 								<p class="mb-2">
-									<i class="fa fa-phone-alt me-3"></i>+119
+									<i class="fa fa-phone-alt me-3"></i>062-655-3506, 9
 								</p>
 								<div class="d-flex pt-2">
 									<a class="btn btn-outline-light btn-social" href=""><i

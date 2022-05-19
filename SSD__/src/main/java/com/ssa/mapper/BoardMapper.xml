@@ -26,5 +26,7 @@
     <update id="boardUpdate" parameterType="com.ssa.domain.Board">
        update tb_table set title= #{title}, content= #{content} where idx=#{idx}
     </update>
+    
+ 
    
 </mapper>

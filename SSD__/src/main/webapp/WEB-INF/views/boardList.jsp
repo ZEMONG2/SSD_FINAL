@@ -1,7 +1,7 @@
 <%@page import="com.ssa.domain.UserVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -163,9 +163,11 @@
             </tr>
             </c:forEach>
             <tr>
+            <c:if test="${LoginVo.user_admin eq 'Y'}">
                <td colspan ="5">
                   <button class="btn btn-success btn-sm" onclick = "location.href ='/boardForm.do'">글쓰기</button>
                </td>
+             </c:if>
             </tr>
             
          </table>
@@ -187,8 +189,8 @@
                     <div class="col-lg-3 col-md-6">
                         <h5 class="text-white mb-4">Contact</h5>
                         <!--주소 넣기(백)-->
-                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>주소 넣어주세요</p>
-                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+119</p>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>광주광역시 동구 예술길 31-15 </p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>062-655-3506, 9</p>
                         <div class="d-flex pt-2">
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>

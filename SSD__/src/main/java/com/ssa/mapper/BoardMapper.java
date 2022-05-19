@@ -26,5 +26,6 @@ public interface BoardMapper {
 	
 	//특정 게시물 번호를 가진 게시물 수정
 	public void boardUpdate(Board vo);
+	
 
 }
