@@ -114,43 +114,15 @@
         </div>
     </div>
     <!-- Search End -->
-
 <c:forEach var="vo" items="${UserTeamState}">
+	<div style="display:inline-block; margin-left:40px; margin-right:40px;">
         <!-- Team Start -->
         <div class="container-xxl py-5">
-            <div class="container">
-            
-                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 300px;">
-                    <!-- <div class="accordion accordion-flush" id="accordionFlushExample"
-                        style="transform: translateX(13%);">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="flush-headingOne">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#flush-collapseOne" aria-expanded="false"
-                                    aria-controls="flush-collapseOne">
-                                    <h1>유재열 팀</h1>
-                                </button>
-                            </h2>
-                            <div id="flush-collapseOne" class="accordion-collapse collapse"
-                                aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body" style="text-align:left;padding-left:1.4rem;">
-                                    <h3><a href="">한수진팀</a></h3>
-                                    <h3><a href="">두수진팀</a></h3>
-                                    <h3><a href="">삼수진팀</a></h3>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
-                </div>
-                
-                
-                
-                
-                
+            <div class="container" >
+        
                 
                  <div class="row g-4">
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s" style="width:auto; margin-left:50px; margin-right:50px;">
                 <div class="team-item rounded overflow-hidden">
                     <div class="position-relative" style="display:flex; justify-content: center;margin-top: 20px; ">
                         <img class="img-fluid" src="resources/img/team-1.jpg" alt="" width="200px">
@@ -185,9 +157,9 @@
         </div>
 </div>
 </div>
-
+</div>
 </c:forEach>
-
+</div>
         
 
        <!-- Footer Start -->

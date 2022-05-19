@@ -165,6 +165,19 @@
                             </div>
                         </a>
                     </div>
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <a class="cat-item d-block text-center rounded p-3" href="/team_member?user_team=3">
+                            <div class="rounded p-4">
+                                <div class="icon mb-3">
+                                	<span>응급 구조</span>
+                                </div>
+                                <!-- 팀장 이름(백) -->
+                                <h6>박승현</h6>
+                                <!-- 팀 인원 수 -->
+                                <span>${TeamCnt4}명</span>
+                            </div>
+                        </a>
+                    </div>
                     
                 </div>
             </div>
