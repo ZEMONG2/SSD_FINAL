@@ -153,10 +153,10 @@ public class UserController {
 	}
 	
 	@RequestMapping("/monitoring")
-	public String UserTempState(@RequestParam("user_id") String user_id, Model model) {
+	public String UserListIdCheck(@RequestParam("user_id") String user_id, Model model) {
 
-		ArrayList<Shoulder> TempState = UserService.UserTempState(user_id);
-		model.addAttribute("TempState",TempState);
+		UserVO UserListIdCheck = UserService.UserListIdCheck(user_id);
+		model.addAttribute("UserListIdCheck",UserListIdCheck);
 		
 		
 		return "monitoring";

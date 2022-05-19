@@ -174,15 +174,15 @@
 					<div>
 						<div data-wow-delay="0.1s">
 							<!-- 모니터링 대상 사진(백) -->
-							<img src="resources//img/team-1.jpg" alt=""
+							<img src="resources/img/team-1.jpg" alt=""
 								style="width: 200px; height: 200px;">
 						</div>
 					</div>
 					<div>
 						<div class="text-start mx-auto mb-5">
 							<!-- 모니터링 대상  받아오기(백) -->
-							<h1 class="mb-3">한수진</h1>
-							<span>1966년 4월 </span> <span>o형</span>
+							<h1 class="mb-3">${UserListIdCheck.user_name}</h1>
+							<span>${UserListIdCheck.user_birthdate}</span> <span>${UserListIdCheck.user_bloodtype}형</span>
 
 						</div>
 					</div>
@@ -204,7 +204,9 @@
 								<div class="">
 									<i class="fa fa-light fa-temperature-half"></i>
 								</div> <!-- 현장온도 -->
-								<h5 class="m-0 text-uppercase" id="temp">50</h5>
+								<div id = "temp_spot">
+								<h5 class="m-0 text-uppercase" id = "temp">0C°</h5>
+								</div>
 							</li>
 							<!-- 비콘(하) -->
 							<li class="nav-item me-0"><i
@@ -215,8 +217,6 @@
 										class="form-check-label" for="bcon"></label>
 								</div>
 							</li>
-
-
 
 						</ul>
 					</div>
@@ -239,7 +239,7 @@
 											<div class="video-container"
 												style="display: flex; justify-content: center; align-items: center; height: 542px;">
 												<div class="video-play-area">
-													<img src="http://192.168.72.39:5000/stream.mjpg" />
+													<img src="http://172.30.1.47:5000/stream.mjpg" />
 												</div>
 											</div>
 										</div>
@@ -416,6 +416,36 @@
 
 	<!-- Template Javascript -->
 	<script src="resources/js/main.js"></script>
+	
+	<!-- 자동 갱신 스크립트 include -->
+<script type="text/javascript">
+function getData(){
+$.ajax({
+	type: "GET",
+	url: "${pageContext.request.contextPath}/api/temp/admin",
+	success: function(res){
+		console.log(res)
+		console.log(res[res.length-1].temp)
+        var temp = res[res.length-1].temp
+		var x = document.getElementById("temp_spot");
+x.querySelector("#temp").innerHTML = temp+"C°";
+		
+		/* var state = document.querySelector('#temp')
+		
+		state.innerHTML = "350" */
+			//"<h5 class='m-0 text-uppercase'>"+temp+"</h5>"
+		}
+	})
+}
+$(document).ready(function(){
+    playTimer = setInterval(function() {
+    	getData();
+   }, 3000);
+  });
+
+	</script>
+	
+	
 </body>
 
 </html>

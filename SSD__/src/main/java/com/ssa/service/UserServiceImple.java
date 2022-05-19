@@ -102,6 +102,14 @@ public class UserServiceImple implements UserService {
 		System.out.println("Service : " + list);
 		return list;
 	}
+	
+	 // 유저 아이디 조회
+    @Override
+    public UserVO UserListIdCheck(String user_id) {
+       UserVO list = mapper.UserListIdCheck(user_id);
+       System.out.println("Service : " + list);
+       return list;
+    }
 
 	// 팀 조회
 	@Override

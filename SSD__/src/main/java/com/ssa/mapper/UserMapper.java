@@ -47,6 +47,7 @@ public interface UserMapper {
 	public int UserTeamCount3();
 	
 	public ArrayList<UserVO> UserListId(String user_id);
+	public UserVO UserListIdCheck(String user_id);
 	public ArrayList<UserVO> UserTeamList(int user_team);
 	public ArrayList<Shoulder> UserTemp(String user_id);
 }

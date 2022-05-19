@@ -73,6 +73,11 @@
    <select id="UserListId" resultType="com.ssa.domain.UserVO">
       select * from tb_user where user_id=#{user_id}
    </select>
+   
+   <!-- 대원 아이디 리스트확인 -->
+   <select id="UserListIdCheck" resultType="com.ssa.domain.UserVO">
+      select * from tb_user where user_id=#{user_id}
+   </select>
 
 
 <!-- 대원 팀 리스트확인 -->
@@ -92,4 +97,3 @@
    
    
 </mapper>
-

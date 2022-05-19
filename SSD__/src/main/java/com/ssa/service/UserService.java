@@ -42,6 +42,7 @@ public interface UserService {
 	public int UserTeamCount3();
 	   // 대원리스트(아이디별 체크)
 	   public ArrayList<UserVO> UserListId(String user_id);
+	   public UserVO UserListIdCheck(String user_id);
 	   // 대원리스트(팀별 체크)
 	   public ArrayList<UserVO> UserTeamList(int user_team);
 	   // 대원 온도 체크(아이디별 체크)
