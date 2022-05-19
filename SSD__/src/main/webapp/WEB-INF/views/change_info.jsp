@@ -184,8 +184,8 @@
 					</tbody>		
 				</table>
 								</div>
-						<div style="text-align:center;">
-						<button type="button" class="btn btn-default"> 저장</button>
+						<div style="text-align:center; ">
+						<button type="button" class="btn btn-success"> 저장</button><br><br>
 						</div>
 						</div>
 
@@ -238,6 +238,10 @@
 					</tbody>
 				</table>
 								</div>
+								
+								<div style="text-align:center; ">
+						<button type="button" class="btn btn-success"> 저장</button><br><br>
+						</div>
 						</div>
 
 					</div>
@@ -289,6 +293,10 @@
 				</tbody>
 				</table>
 								</div>
+								
+								<div style="text-align:center; ">
+						<button type="button" class="btn btn-success"> 저장</button><br><br>
+						</div>
 						</div>
 
 					</div>
