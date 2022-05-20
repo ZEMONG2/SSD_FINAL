@@ -143,7 +143,7 @@
 							<div id="collapseOne1" class="accordion-collapse collapse">
 								<!-- 아코디언 바디 -->
 								<div class="accordion-body">
-						<form action="/change_state" method="POST">
+					
 						<table class="table table-hover">
 					<thead>
 					</thead>
@@ -156,17 +156,19 @@
 							<th scope="col">저장</th>
 						</tr>
 					<tbody>
-					<c:forEach var="vo" items="${User_list1}">
-
+					<c:forEach var="vo" items="${User_list1}" varStatus="status">
+						 <!-- <form action="/ChangeState" method="post"> ${status.index}-->
 						<tr style="vertical-align: middle;">
 							<td>구조 1팀</td>
 							<td>${vo.user_name}</td>
 							<td>${vo.user_rank}</td>
-							<td id="user_id" value="${vo.user_id}">${vo.user_id}</td>
+							<td name="user_id" id="user_idCk" value="${vo.user_id}">${vo.user_id}</td>
 							<td>
+							<!--<c:out value="${vo.user_id}"/>-->
+							<input type="hidden" id="changeInput${status.index}" >
 								<select class="form-select"
-									aria-label="Default select example" id="user_state">
-										<option selected>근태</option>
+									aria-label="Default select example" name="user_state" onchange="selectBoxChange(this.value, ${status.index});">
+										<option value="근태">근태</option>
 										<option value="출동">출동</option>
 										<option value="대기">대기</option>
 										<option value="연차">연차</option>
@@ -174,7 +176,7 @@
 							</td>
 							<td>
 							
-							<button type="submit" class="btn btn-success" > 저장</button>
+							<button type="submit" class="btn btn-success" onclick="StateDataSend('${vo.user_id}',${status.index})">저장</button>
 								<!-- <button type="button" class="btn btn-default"
 									onclick="location.href='mypage'"
 									style="padding-top: 0px; padding-bottom: 0px;">
@@ -182,11 +184,11 @@
 								</button> -->
 							</td>
 						</tr>	
-						
+						</form>
 						</c:forEach>
 					</tbody>		
 				</table>
-				</form>
+				
 								</div>
 						
 						</div>
@@ -402,5 +404,22 @@
 
 	<!-- Template Javascript -->
 	<script src="resources/js/main.js"></script>
+	<script>
+		var selectBoxChange = function(value, idx){
+			console.log(value);
+			console.log(idx);
+		$("#changeInput"+idx).val(value);
+		}
+		
+		function StateDataSend(id,idx){
+			var user_state = $("#changeInput"+idx).val();
+			var user_id = id;
+			console.log(user_state);
+			console.log(user_id);
+			location.href="${pageContext.request.contextPath}/ChangeState?param1="+user_id+"&param2="+user_state
+		}
+		
+		
+	</script>
 </body>
 

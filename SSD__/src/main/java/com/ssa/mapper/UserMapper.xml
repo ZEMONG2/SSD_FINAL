@@ -56,6 +56,9 @@
  <select id="UserTeamList3" resultType="com.ssa.domain.UserVO">
       select * from tb_user where user_team = '3'
    </select>
+ <select id="UserTeamList4" resultType="com.ssa.domain.UserVO">
+      select * from tb_user where user_team = '4'
+   </select>
    
    <select id="UserTeamCount1" resultType="int">
       select count( * ) from tb_user where user_team = '1'
@@ -65,6 +68,9 @@
    </select>
  <select id="UserTeamCount3" resultType="int">
       select count( * ) from tb_user where user_team = '3'
+   </select>
+ <select id="UserTeamCount4" resultType="int">
+      select count( * ) from tb_user where user_team = '4'
    </select>
    
    
@@ -95,7 +101,7 @@
       select * from tb_shoulder where user_id=#{user_id} and 1 ORDER BY s_seq DESC LIMIT 1
    </select>
    
-    <update id="ChangeState" parameterType="com.ssa.domain.UserVO">
-   	update tb_user set user_state=#{user_state} where user_id = #{user_id}
+    <update id="ChangeState" parameterType="String">
+   	update tb_user set user_state=#{param2} where user_id = #{param1}
    </update>
 </mapper>

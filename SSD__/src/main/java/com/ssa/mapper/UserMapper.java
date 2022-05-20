@@ -41,15 +41,17 @@ public interface UserMapper {
 	public ArrayList<UserVO> UserTeamList1();
 	public ArrayList<UserVO> UserTeamList2();
 	public ArrayList<UserVO> UserTeamList3();
+	public ArrayList<UserVO> UserTeamList4();
 	
 	public int UserTeamCount1();
 	public int UserTeamCount2();
 	public int UserTeamCount3();
+	public int UserTeamCount4();
 	
 	public ArrayList<UserVO> UserListId(String user_id);
 	public UserVO UserListIdCheck(String user_id);
 	public ArrayList<UserVO> UserTeamList(int user_team);
 	public ArrayList<Shoulder> UserTemp(String user_id);
 	
-	public UserVO ChangeState(UserVO vo);
+	public void ChangeState(String user_id, String user_state);
 }

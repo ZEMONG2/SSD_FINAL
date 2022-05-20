@@ -31,7 +31,7 @@ public interface UserService {
 	public ArrayList<UserVO> statelist();
 	
 	//근태업데이트
-	public void ChangeState(UserVO vo);
+	public void ChangeState(String user_id, String user_state);
 
 	
 	public ArrayList<UserVO> UserTeamState(int user_team);
@@ -40,10 +40,12 @@ public interface UserService {
 	public ArrayList<UserVO> UserTeamList1();
 	public ArrayList<UserVO> UserTeamList2();
 	public ArrayList<UserVO> UserTeamList3();
+	public ArrayList<UserVO> UserTeamList4();
 	
 	public int UserTeamCount1();
 	public int UserTeamCount2();
 	public int UserTeamCount3();
+	public int UserTeamCount4();
 	   // 대원리스트(아이디별 체크)
 	   public ArrayList<UserVO> UserListId(String user_id);
 	   public UserVO UserListIdCheck(String user_id);

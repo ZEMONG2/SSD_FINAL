@@ -94,6 +94,12 @@ public class UserServiceImple implements UserService {
 		ArrayList<UserVO> list = mapper.UserTeamList3();
 		return list;
 	}
+	
+	@Override
+	public ArrayList<UserVO> UserTeamList4() {
+		ArrayList<UserVO> list = mapper.UserTeamList4();
+		return list;
+	}
 
 	// 유저 조회
 	@Override
@@ -139,6 +145,12 @@ public class UserServiceImple implements UserService {
 		System.out.println("Service : " + teamCnt);
 		return teamCnt;
 	}
+	@Override
+	public int UserTeamCount4() {
+		int teamCnt = mapper.UserTeamCount4();
+		System.out.println("Service : " + teamCnt);
+		return teamCnt;
+	}
 
 	@Override
 	public ArrayList<Shoulder> UserTemp(String user_id) {
@@ -149,8 +161,8 @@ public class UserServiceImple implements UserService {
 	
 	// 근태 업데이트
 		@Override
-		public void ChangeState(UserVO vo) {
-			mapper.ChangeState(vo);
+		public void ChangeState(String user_id, String user_state) {
+			mapper.ChangeState(user_id, user_state);
 		}
 
 }
