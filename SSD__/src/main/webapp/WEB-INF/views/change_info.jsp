@@ -218,25 +218,36 @@
 						</tr>
 					</thead>
 					<tbody>
-					<c:forEach var="vo" items="${User_list2}">
+					<c:forEach var="vo" items="${User_list2}" varStatus="status">
+						 <!-- <form action="/ChangeState" method="post"> ${status.index}-->
 						<tr style="vertical-align: middle;">
-							
-							<th>구조 2팀</th>
+							<td>구조 2팀</td>
 							<td>${vo.user_name}</td>
 							<td>${vo.user_rank}</td>
-							<td>${vo.user_id}</td>
-							<th><select class="form-select"
-								aria-label="Default select example">
-									<option selected>근태</option>
-									<option value="1">출동</option>
-									<option value="2">대기</option>
-									<option value="3">연차</option>
-							</select></th>
-							<th>
-							<button type="button" class="btn btn-success"> 저장</button>
-								</th>
-							</tr>
-					</c:forEach>
+							<td name="user_id" id="user_idCk" value="${vo.user_id}">${vo.user_id}</td>
+							<td>
+							<!--<c:out value="${vo.user_id}"/>-->
+							<input type="hidden" id="changeInput${status.index}" >
+								<select class="form-select"
+									aria-label="Default select example" name="user_state" onchange="selectBoxChange(this.value, ${status.index});">
+										<option value="근태">근태</option>
+										<option value="출동">출동</option>
+										<option value="대기">대기</option>
+										<option value="연차">연차</option>
+								</select>
+							</td>
+							<td>
+							
+							<button type="submit" class="btn btn-success" onclick="StateDataSend('${vo.user_id}',${status.index})">저장</button>
+								<!-- <button type="button" class="btn btn-default"
+									onclick="location.href='mypage'"
+									style="padding-top: 0px; padding-bottom: 0px;">
+									<i class="fa-solid fa-pen"></i>
+								</button> -->
+							</td>
+						</tr>	
+						</form>
+						</c:forEach>
 					</tbody>
 				</table>
 								</div>
@@ -269,25 +280,36 @@
 						</tr>
 					</thead>
 					<tbody>
-					<c:forEach var="vo" items="${User_list3}">
+					<c:forEach var="vo" items="${User_list3}" varStatus="status">
+						 <!-- <form action="/ChangeState" method="post"> ${status.index}-->
 						<tr style="vertical-align: middle;">
-							
-							<th>구조 3팀</th>
+							<td>구조 3팀</td>
 							<td>${vo.user_name}</td>
 							<td>${vo.user_rank}</td>
-							<td>${vo.user_id}</td>
-							<th><select class="form-select"
-								aria-label="Default select example">
-									<option selected>근태</option>
-									<option value="1">출동</option>
-									<option value="2">대기</option>
-									<option value="3">연차</option>
-							</select></th>
-							<th>
-								<button type="button" class="btn btn-success"> 저장</button>
-								</th>
-									</tr>
-							</c:forEach>
+							<td name="user_id" id="user_idCk" value="${vo.user_id}">${vo.user_id}</td>
+							<td>
+							<!--<c:out value="${vo.user_id}"/>-->
+							<input type="hidden" id="changeInput${status.index}" >
+								<select class="form-select"
+									aria-label="Default select example" name="user_state" onchange="selectBoxChange(this.value, ${status.index});">
+										<option value="근태">근태</option>
+										<option value="출동">출동</option>
+										<option value="대기">대기</option>
+										<option value="연차">연차</option>
+								</select>
+							</td>
+							<td>
+							
+							<button type="submit" class="btn btn-success" onclick="StateDataSend('${vo.user_id}',${status.index})">저장</button>
+								<!-- <button type="button" class="btn btn-default"
+									onclick="location.href='mypage'"
+									style="padding-top: 0px; padding-bottom: 0px;">
+									<i class="fa-solid fa-pen"></i>
+								</button> -->
+							</td>
+						</tr>	
+						</form>
+						</c:forEach>
 				</tbody>
 				</table>
 								</div>

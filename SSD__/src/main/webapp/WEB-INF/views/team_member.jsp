@@ -149,7 +149,7 @@
                         <!-- 상태가 비정상일 경우 -->
                         <h5 class="fw-bold mb-0" style="color: crimson; margin-right:20px;"><i class="fa fa-light fa-triangle-exclamation"></i>${vo.user_name}</h5>
                         <!-- 상태(?) -->
-                        <small>대기</small>
+                        <small>${vo.user_state }</small>
                     </div>
                 </div>
             </div>
