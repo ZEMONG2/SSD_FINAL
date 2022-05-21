@@ -50,8 +50,13 @@ public interface UserMapper {
 	
 	public ArrayList<UserVO> UserListId(String user_id);
 	public UserVO UserListIdCheck(String user_id);
+	
 	public ArrayList<UserVO> UserTeamList(int user_team);
 	public ArrayList<Shoulder> UserTemp(String user_id);
+	// 자이로 값 가져오기
+		public ArrayList<Shoulder> UserGyro(String user_id);
 	
 	public void ChangeState(String user_id, String user_state);
+	
+	public void UpdateBeacon(String user_id, String beacon);
 }

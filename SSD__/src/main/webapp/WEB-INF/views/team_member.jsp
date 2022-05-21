@@ -114,7 +114,7 @@
         </div>
     </div>
     <!-- Search End -->
-<c:forEach var="vo" items="${UserTeamState}">
+<c:forEach var="vo" items="${UserTeamState}" varStatus="status">
 	<div style="display:inline-block; margin-left:40px; margin-right:40px;">
         <!-- Team Start -->
         <div class="container-xxl py-5">
@@ -125,7 +125,7 @@
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s" style="width:auto; margin-left:50px; margin-right:50px;">
                 <div class="team-item rounded overflow-hidden">
                     <div class="position-relative" style="display:flex; justify-content: center;margin-top: 20px; ">
-                        <img class="img-fluid" src="resources/img/team-1.jpg" alt="" width="200px">
+                        <img class="img-fluid" src="resources/img/team-${status.count}.jpg" alt="" width="200px">
                         
                         
                         <div

@@ -151,6 +151,7 @@ public class UserController {
 	public String UserListIdCheck(@RequestParam("user_id") String user_id, Model model) {
 
 		UserVO UserListIdCheck = UserService.UserListIdCheck(user_id);
+		
 		model.addAttribute("UserListIdCheck", UserListIdCheck);
 
 		return "monitoring";

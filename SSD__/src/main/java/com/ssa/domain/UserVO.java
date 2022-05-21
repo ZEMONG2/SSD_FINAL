@@ -21,6 +21,7 @@ public class UserVO {
 	private String user_state; // 상태
 	private String user_team; // 팀
 	private String user_admin;// 관리자
+	private int beacon; //비콘
 	
 	
 	

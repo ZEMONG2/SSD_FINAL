@@ -25,7 +25,14 @@ public class ShoulderController {
 	  
 	  }
 	 
-	
+	  @GetMapping("/gyro")
+	  public String GyroData(@PathVariable String user_id,  Model model) {
+		  Shoulder gr = mapper.ShoulderData(user_id);
+		  System.out.print("체크중입니다");
+		  model.addAttribute("g_vo",gr);
+		  return "redirect:/gyro_check.do";
+		  
+	  }
 	
 	
 }

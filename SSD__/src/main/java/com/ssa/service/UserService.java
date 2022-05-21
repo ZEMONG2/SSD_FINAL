@@ -3,7 +3,9 @@ package com.ssa.service;
 import java.util.ArrayList;
 
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
+import com.ssa.domain.Arduino;
 import com.ssa.domain.Shoulder;
 import com.ssa.domain.UserVO;
 import com.ssa.domain.UserVO2;
@@ -53,4 +55,11 @@ public interface UserService {
 	   public ArrayList<UserVO> UserTeamList(int user_team);
 	   // 대원 온도 체크(아이디별 체크)
 	   public ArrayList<Shoulder> UserTemp(String user_id);
+	   
+
+	   public void UpdateBeacon(String user_id, String beacon);
+	   
+//	   public ArrayList<Arduino> ArduinoData(String user_id);
+	   
+	   public ArrayList<Shoulder> UserGyro(String user_id);
 }

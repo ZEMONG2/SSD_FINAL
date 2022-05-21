@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.ssa.domain.Arduino;
 import com.ssa.domain.Shoulder;
 import com.ssa.domain.UserVO;
 import com.ssa.domain.UserVO2;
@@ -164,5 +165,26 @@ public class UserServiceImple implements UserService {
 		public void ChangeState(String user_id, String user_state) {
 			mapper.ChangeState(user_id, user_state);
 		}
+		
+	@Override
+	public void UpdateBeacon(String user_id, String beacon) {
+		
+		mapper.UpdateBeacon(user_id, beacon);
+	}
+	
+//	@Override
+//	public ArrayList<Arduino> ArduinoData(String user_id){
+//		ArrayList<Arduino> list = mapper.ArduinoData(user_id);
+//		System.out.println("Service : " + list);
+//		return list;
+//	}
 
+	@Override
+	public ArrayList<Shoulder> UserGyro(String user_id) {
+		ArrayList<Shoulder> list = mapper.UserGyro(user_id);
+		System.out.println("Service : " + list);
+		return list;
+	}
+	
+	
 }

@@ -104,4 +104,15 @@
     <update id="ChangeState" parameterType="String">
    	update tb_user set user_state=#{param2} where user_id = #{param1}
    </update>
+   
+   
+    <update id="UpdateBeacon" parameterType="String">
+   	update tb_user set beacon=#{param2} where user_id = #{param1}
+   </update>
+   <!-- 대원 자이로 값 확인 -->
+   <select id="UserGyro" resultType="com.ssa.domain.Shoulder">
+      select gyro from tb_shoulder where user_id=#{user_id}
+   </select>
+   
+   
 </mapper>

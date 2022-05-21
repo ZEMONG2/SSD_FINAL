@@ -212,9 +212,16 @@
 							<li class="nav-item me-0"><i
 								class="fa fa-solid fa-bluetooth fa-lg"></i>
 								<div class="form-check form-switch">
+								<c:if test="${UserListIdCheck.beacon eq 0}">
+									<input class="form-check-input" type="checkbox"
+										style="width: 40px" role="switch" id="bcon"> <label
+										class="form-check-label" for="bcon"></label>
+								</c:if>
+								<c:if test="${UserListIdCheck.beacon eq 1}">
 									<input class="form-check-input" type="checkbox"
 										style="width: 40px" role="switch" id="bcon" checked> <label
 										class="form-check-label" for="bcon"></label>
+								</c:if>
 								</div>
 							</li>
 
@@ -263,7 +270,7 @@
 				<div class="text-center mx-auto mb-5 wow fadeInUp"
 					data-wow-delay="0.4s" style="max-width: 600px;">
 					<!-- 팀이름(백) -->
-					<h1 class="mb-3">유재열 팀</h1>
+					<!-- <h1 class="mb-3">유재열 팀</h1> -->
 				</div>
 				<div class="owl-carousel testimonial-carousel wow fadeInUp"
 					data-wow-delay="0.4s">
@@ -418,6 +425,8 @@
 	<script src="resources/js/main.js"></script>
 	
 	<!-- 자동 갱신 스크립트 include -->
+	
+	<!-- 온도 실시간 -->
 <script type="text/javascript">
 function getData(){
 $.ajax({
@@ -443,6 +452,87 @@ $(document).ready(function(){
    }, 3000);
   });
 
+	</script>
+	
+	
+	<!-- 비콘 실시간 -->
+	<script type="text/javascript">
+	
+	
+	
+	function beaconCheck(){
+		var bconCheck = $('#bcon').is(':checked');
+		console.log(bconCheck)
+		if(bconCheck){
+			
+			updateBeacon1();
+				
+		}else if(!bconCheck) {
+			updateBeacon0();
+		}		
+	}
+	
+	
+	function updateBeacon1(){
+		$.ajax({
+			type: "GET",
+			url: "${pageContext.request.contextPath}/api/beacon/${UserListIdCheck.user_id}/1",
+			success: function(check){
+				console.log(check)
+				
+				}
+			})
+		}
+	
+	function updateBeacon0(){
+		$.ajax({
+			type: "GET",
+			url: "${pageContext.request.contextPath}/api/beacon/${UserListIdCheck.user_id}/0",
+			success: function(check){
+				console.log(check)
+				
+				}
+			})
+		}
+	
+	
+	
+		$(document).ready(function(){
+		    playTimer = setInterval(function() {
+		    	beaconCheck();
+		   }, 3000);
+		  });
+	
+	</script>
+	<!-- 손목 실시간 -->
+	<script type="text/javascript">
+	
+	function getSensorData(){
+		$.ajax({
+			type: "GET",
+			url: "${pageContext.request.scheme}://172.30.1.33",
+			success: function(data){
+				console.log(data)/* 
+				console.log(data[data.length-1].heart)
+				console.log(data[data.length-1].spo2)
+				console.log(data[data.length-1].user_id) */
+		        //var heart = data[data.length-1].heart
+				//var x = document.getElementById("temp_spot");
+		//x.querySelector("#temp").innerHTML = temp+"C°";
+				
+				/* var state = document.querySelector('#temp')
+				
+				state.innerHTML = "350" */
+					//"<h5 class='m-0 text-uppercase'>"+temp+"</h5>"
+				}
+			})
+		}
+		$(document).ready(function(){
+		    playTimer = setInterval(function() {
+		    	getSensorData();
+		   }, 3000);
+		  });
+	
 	</script>
 	
 	

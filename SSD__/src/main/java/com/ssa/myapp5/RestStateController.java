@@ -1,5 +1,6 @@
 package com.ssa.myapp5; 
 
+import com.ssa.domain.Arduino;
 import com.ssa.domain.Shoulder;
 import com.ssa.domain.UserVO;
 import com.ssa.service.UserService;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 
@@ -38,15 +40,23 @@ public class RestStateController {
       return vo;
    }
    
-//   @GetMapping("/change_state/{user_id}/{user_state}")
-//	 public String ChangeState(@PathVariable("user_id") String user_id,@PathVariable("user_state") String user_state) {
-//		 
-//		 service.ChangeState(user_id, user_state);
-//		 System.out.println("근태 저장완료");
-//		 System.out.println("근태 : "+user_state);
-//		 System.out.println("아이디 : "+user_id);
-//	
-//	 return "redirect:/change_info";
-//	 }
+   @GetMapping("/beacon/{param1}/{param2}")
+   public String Beacon(@PathVariable("param1") String user_id,@PathVariable("param2") String beacon) {
+      service.UpdateBeacon(user_id, beacon);
+      return user_id + "  " + beacon;
+   }
+   
+//   @GetMapping("/arduino")
+//   public ArrayList<Arduino> ArduinoData() {
+//	   ArrayList<Arduino> vo = service.ArduinoData();
+//      return vo;
+//   }
+   @GetMapping("/gyro/{user_id}")
+   public ArrayList<Shoulder> UserGyro(@PathVariable("user_id") String user_id) {
+	   ArrayList<Shoulder> vo = service.UserGyro(user_id);
+	   return vo;
+   }
+   
+   
    
 }
