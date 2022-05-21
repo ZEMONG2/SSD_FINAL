@@ -45,7 +45,7 @@
    </select>
 
   <select id="UserTeamState" parameterType="int" resultType="com.ssa.domain.UserVO">
-      select * from tb_user where user_team = #{user_team}
+      select * from tb_user where user_team = #{user_team} order by user_admin desc
    </select>
  <select id="UserTeamList1" resultType="com.ssa.domain.UserVO">
       select * from tb_user where user_team = '1'

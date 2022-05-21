@@ -504,36 +504,7 @@ $(document).ready(function(){
 		  });
 	
 	</script>
-	<!-- 손목 실시간 -->
-	<script type="text/javascript">
-	
-	function getSensorData(){
-		$.ajax({
-			type: "GET",
-			url: "${pageContext.request.scheme}://172.30.1.33",
-			success: function(data){
-				console.log(data)/* 
-				console.log(data[data.length-1].heart)
-				console.log(data[data.length-1].spo2)
-				console.log(data[data.length-1].user_id) */
-		        //var heart = data[data.length-1].heart
-				//var x = document.getElementById("temp_spot");
-		//x.querySelector("#temp").innerHTML = temp+"C°";
-				
-				/* var state = document.querySelector('#temp')
-				
-				state.innerHTML = "350" */
-					//"<h5 class='m-0 text-uppercase'>"+temp+"</h5>"
-				}
-			})
-		}
-		$(document).ready(function(){
-		    playTimer = setInterval(function() {
-		    	getSensorData();
-		   }, 3000);
-		  });
-	
-	</script>
+
 	
 	
 </body>

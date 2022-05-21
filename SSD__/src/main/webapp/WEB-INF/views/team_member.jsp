@@ -140,19 +140,19 @@
                                             <button type="button" class="btn btn-outline-light btn-square-md"  onclick="location.href='/monitoring?user_id=${vo.user_id}'" data-mdb-ripple-color="dark">
                                                 <i
                                     class="fa-solid fa-video"></i></button>  
-                                    <button type="submit" class="btn btn-success" style="display:none;" id="userId" value="${vo.user_id}" onclick="UserGyro(${vo.user_id})">${vo.user_id}</button>
+                                    <button type="submit" class="btn btn-success" style="display:none;" id="userId${status.index}" value="${vo.user_id}" onclick="UserGyro${status.index}('${vo.user_id}')">${vo.user_id}</button>
                                                  
                         </div>
                     </div>
                     <div class="text-center p-4 mt-3">
                         <!-- 이름(백) -->
                         <!-- 상태가 정상일 경우 -->
-                        <span id="userGyroGood" style="display:">
+                        <span id="userGyroGood${status.index}" style="display:">
                         <h5 class="fw-bold mb-0"><i class="fa-solid fa-badge-check"></i>${vo.user_name}</h5>
                         </span>
                         
                         <!-- 상태가 비정상일 경우 -->
-                        <span id="userGyroBad" style="display:none">
+                        <span id="userGyroBad${status.index}" style="display:none">
                         <h5 class="fw-bold mb-0" style="color: crimson; margin-right:20px;"><i class="fa fa-light fa-triangle-exclamation"></i>${vo.user_name}</h5>
                         </span>
                         <!-- 상태(?) -->
@@ -245,60 +245,117 @@
     <!-- Template Javascript -->
     <script src="resources/js/main.js"></script>
     
-    <!-- 자이로 실시간 -->
-<script type="text/javascript">
-
-
-function click(){
-	document.getElementById('userId').click();
-}
-
-var UserGyro = function(value){
-	console.log(value);
-
-
-var USERID = value;
-console.log(USERID);
-function getGyroData0(){
-$.ajax({
-	type: "GET",
-	url: "${pageContext.request.contextPath}/api/gyro/"+USERID,
-	success: function(gyroData){
-		console.log(gyroData)
-		console.log(gyroData[gyroData.length-1].gyro)
-        var gyroCurrentData = gyroData[gyroData.length-1].gyro
-        
-        if (gyroCurrentData == 0){
-        	var good = document.getElementById("userGyroGood");
-        	good.style.display='';
-        	var bad = document.getElementById("userGyroBad");
-        	good.style.display='none';
-        }else if (gyroCurrentData == 1){
-        	
-        	var good = document.getElementById("userGyroGood");
-        	good.style.display='none';
-        	var bad = document.getElementById("userGyroBad");
-        	good.style.display='';
-        	
-        }
+	<!-- 자이로 실시간 -->
+	<script type="text/javascript">
+	var b_click = function(){
+		var test0 = document.getElementById('userId0')
+		var test1 = document.getElementById('userId1')
+		var test2 = document.getElementById('userId2')
+		test0.click();
+		test1.click();
+		test2.click();
+	}
+	
+	var UserGyro0 = function(value){
+		console.log("value : "+value);
+		var USERID = value;
+		console.log("USERID : "+USERID);
 		
-		/* var state = document.querySelector('#temp')
+	$.ajax({
+		type: "GET",
+		url: "${pageContext.request.contextPath}/api/gyro/"+USERID,
+		success: function(gyroData){
+			console.log(gyroData)
+			console.log(gyroData[gyroData.length-1].gyro)
+	        var gyroCurrentData = gyroData[gyroData.length-1].gyro
+	        
+	        if (gyroCurrentData == 0){
+	        	var good = document.getElementById("userGyroGood0");
+	        	good.style.display='';
+	        	var bad = document.getElementById("userGyroBad0");
+	        	bad.style.display='none';
+	        }else if (gyroCurrentData == 1){
+	        	
+	        	var good = document.getElementById("userGyroGood0");
+	        	good.style.display='none';
+	        	var bad = document.getElementById("userGyroBad0");
+	        	bad.style.display='';
+	        	
+	        }
+			}
+		})
+	}
+	var UserGyro1 = function(value){
+		console.log("value : "+value);
+		var USERID = value;
+		console.log("USERID : "+USERID);
 		
-		state.innerHTML = "350" */
-			//"<h5 class='m-0 text-uppercase'>"+temp+"</h5>"
-		}
-	})
-}
-
-
-}
-$(document).ready(function(){
-    playTimer = setInterval(function() {
-    	click();
-   }, 3000);
-  });
-
+	$.ajax({
+		type: "GET",
+		url: "${pageContext.request.contextPath}/api/gyro/"+USERID,
+		success: function(gyroData){
+			console.log(gyroData)
+			console.log(gyroData[gyroData.length-1].gyro)
+	        var gyroCurrentData = gyroData[gyroData.length-1].gyro
+	        
+	        if (gyroCurrentData == 0){
+	        	var good = document.getElementById("userGyroGood1");
+	        	good.style.display='';
+	        	var bad = document.getElementById("userGyroBad1");
+	        	bad.style.display='none';
+	        }else if (gyroCurrentData == 1){
+	        	
+	        	var good = document.getElementById("userGyroGood1");
+	        	good.style.display='none';
+	        	var bad = document.getElementById("userGyroBad1");
+	        	bad.style.display='';
+	        	
+	        }
+			}
+		})
+	}
+	var UserGyro2 = function(value){
+		console.log("value : "+value);
+		var USERID = value;
+		console.log("USERID : "+USERID);
+		
+	$.ajax({
+		type: "GET",
+		url: "${pageContext.request.contextPath}/api/gyro/"+USERID,
+		success: function(gyroData){
+			console.log(gyroData)
+			console.log(gyroData[gyroData.length-1].gyro)
+	        var gyroCurrentData = gyroData[gyroData.length-1].gyro
+	        
+	        if (gyroCurrentData == 0){
+	        	var good = document.getElementById("userGyroGood2");
+	        	good.style.display='';
+	        	var bad = document.getElementById("userGyroBad2");
+	        	bad.style.display='none';
+	        }else if (gyroCurrentData == 1){
+	        	
+	        	var good = document.getElementById("userGyroGood2");
+	        	good.style.display='none';
+	        	var bad = document.getElementById("userGyroBad2");
+	        	bad.style.display='';
+	        	
+	        }
+			}
+		})
+	}
+	
+	
+	$(document).ready(function(){
+	    playTimer = setInterval(function() {
+	    	b_click();
+	   }, 3000);
+	  });
 	</script>
+	
+	
+	
+	
+	
 </body>
 
 </html>
