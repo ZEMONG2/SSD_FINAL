@@ -160,6 +160,13 @@ public class UserServiceImple implements UserService {
 		return list;
 	}
 	
+	@Override
+	public ArrayList<Shoulder> UserGyro(String user_id) {
+		ArrayList<Shoulder> list = mapper.UserGyro(user_id);
+		System.out.println("Service : " + list);
+		return list;
+	}
+	
 	// 근태 업데이트
 		@Override
 		public void ChangeState(String user_id, String user_state) {
@@ -179,12 +186,7 @@ public class UserServiceImple implements UserService {
 //		return list;
 //	}
 
-	@Override
-	public ArrayList<Shoulder> UserGyro(String user_id) {
-		ArrayList<Shoulder> list = mapper.UserGyro(user_id);
-		System.out.println("Service : " + list);
-		return list;
-	}
+	
 	
 	
 }

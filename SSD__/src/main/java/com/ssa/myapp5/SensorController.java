@@ -7,18 +7,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 public class SensorController {
 
-	@RequestMapping(value = "/main/arduino", method = RequestMethod.GET)
-	   public String home(Model model, @RequestParam("idx") String idx, @RequestParam("heart") String heart, @RequestParam("spo2") String spo2) {
-//	      String s = sensor;
-//	      , @RequestParam("spo2") String spo2
-	      model.addAttribute("heart", heart);
-	      
-	      System.out.println(heart);
-	      System.out.println("-------------------");
-	      
-	      
-	      return "home";
-	   }
-	
+//	@RequestMapping(value = "/main/arduino", method = RequestMethod.GET)
+//	   public String home(Model model, @RequestParam("idx") String idx, @RequestParam("heart") String heart, @RequestParam("spo2") String spo2) {
+////	      String s = sensor;
+////	      , @RequestParam("spo2") String spo2
+//	      model.addAttribute("heart", heart);
+//	      
+//	      System.out.println(heart);
+//	      System.out.println("-------------------");
+//	      
+//	      
+//	      return "home";
+//	   }
+//	
 	
 }

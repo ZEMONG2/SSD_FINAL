@@ -96,6 +96,11 @@
       select * from tb_shoulder where user_id=#{user_id}
    </select>
    
+   <!-- 대원 자이로 값 확인 -->
+   <select id="UserGyro" resultType="com.ssa.domain.Shoulder">
+      select * from tb_shoulder where user_id=#{user_id}
+   </select>
+   
    <!-- 대원 상태확인 -->
    <select id="UserTempState" parameterType="String" resultType="com.ssa.domain.Shoulder">
       select * from tb_shoulder where user_id=#{user_id} and 1 ORDER BY s_seq DESC LIMIT 1
@@ -109,10 +114,7 @@
     <update id="UpdateBeacon" parameterType="String">
    	update tb_user set beacon=#{param2} where user_id = #{param1}
    </update>
-   <!-- 대원 자이로 값 확인 -->
-   <select id="UserGyro" resultType="com.ssa.domain.Shoulder">
-      select gyro from tb_shoulder where user_id=#{user_id}
-   </select>
+   
    
    
 </mapper>

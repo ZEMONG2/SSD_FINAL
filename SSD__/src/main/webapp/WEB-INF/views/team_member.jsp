@@ -139,15 +139,22 @@
                                             <h5 style="margin-bottom:0px; color:#F39C12;">90%</h5></button>     
                                             <button type="button" class="btn btn-outline-light btn-square-md"  onclick="location.href='/monitoring?user_id=${vo.user_id}'" data-mdb-ripple-color="dark">
                                                 <i
-                                    class="fa-solid fa-video"></i></button>       
+                                    class="fa-solid fa-video"></i></button>  
+                                    <button type="submit" class="btn btn-success" style="display:none;" id="userId" value="${vo.user_id}" onclick="UserGyro(${vo.user_id})">${vo.user_id}</button>
+                                                 
                         </div>
                     </div>
                     <div class="text-center p-4 mt-3">
                         <!-- 이름(백) -->
                         <!-- 상태가 정상일 경우 -->
-                        <!-- <h5 class="fw-bold mb-0""><i class="fa-solid fa-badge-check"></i></i>한수진</h5> -->
+                        <span id="userGyroGood" style="display:">
+                        <h5 class="fw-bold mb-0"><i class="fa-solid fa-badge-check"></i>${vo.user_name}</h5>
+                        </span>
+                        
                         <!-- 상태가 비정상일 경우 -->
+                        <span id="userGyroBad" style="display:none">
                         <h5 class="fw-bold mb-0" style="color: crimson; margin-right:20px;"><i class="fa fa-light fa-triangle-exclamation"></i>${vo.user_name}</h5>
+                        </span>
                         <!-- 상태(?) -->
                         <small>${vo.user_state }</small>
                     </div>
@@ -237,6 +244,61 @@
 
     <!-- Template Javascript -->
     <script src="resources/js/main.js"></script>
+    
+    <!-- 자이로 실시간 -->
+<script type="text/javascript">
+
+
+function click(){
+	document.getElementById('userId').click();
+}
+
+var UserGyro = function(value){
+	console.log(value);
+
+
+var USERID = value;
+console.log(USERID);
+function getGyroData0(){
+$.ajax({
+	type: "GET",
+	url: "${pageContext.request.contextPath}/api/gyro/"+USERID,
+	success: function(gyroData){
+		console.log(gyroData)
+		console.log(gyroData[gyroData.length-1].gyro)
+        var gyroCurrentData = gyroData[gyroData.length-1].gyro
+        
+        if (gyroCurrentData == 0){
+        	var good = document.getElementById("userGyroGood");
+        	good.style.display='';
+        	var bad = document.getElementById("userGyroBad");
+        	good.style.display='none';
+        }else if (gyroCurrentData == 1){
+        	
+        	var good = document.getElementById("userGyroGood");
+        	good.style.display='none';
+        	var bad = document.getElementById("userGyroBad");
+        	good.style.display='';
+        	
+        }
+		
+		/* var state = document.querySelector('#temp')
+		
+		state.innerHTML = "350" */
+			//"<h5 class='m-0 text-uppercase'>"+temp+"</h5>"
+		}
+	})
+}
+
+
+}
+$(document).ready(function(){
+    playTimer = setInterval(function() {
+    	click();
+   }, 3000);
+  });
+
+	</script>
 </body>
 
 </html>

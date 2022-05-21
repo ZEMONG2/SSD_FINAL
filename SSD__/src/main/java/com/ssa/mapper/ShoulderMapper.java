@@ -15,7 +15,7 @@ public interface ShoulderMapper {
 	public Shoulder ShoulderData(String user_id);
 	
 	//자이로값
-		@Select("select gyro from tb_shoulder where user_id=#{user_id")
-		public Shoulder UserGyro(String user_id);
+		//@Select("select gyro from tb_shoulder where user_id=#{user_id")
+		//public Shoulder UserGyro(String user_id);
 
 }

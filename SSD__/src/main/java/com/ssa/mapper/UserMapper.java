@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
 
 import com.ssa.domain.Board;
 import com.ssa.domain.Shoulder;
@@ -54,7 +55,7 @@ public interface UserMapper {
 	public ArrayList<UserVO> UserTeamList(int user_team);
 	public ArrayList<Shoulder> UserTemp(String user_id);
 	// 자이로 값 가져오기
-		public ArrayList<Shoulder> UserGyro(String user_id);
+	public ArrayList<Shoulder> UserGyro(String user_id);
 	
 	public void ChangeState(String user_id, String user_state);
 	

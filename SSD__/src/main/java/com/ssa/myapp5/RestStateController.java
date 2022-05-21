@@ -40,6 +40,12 @@ public class RestStateController {
       return vo;
    }
    
+   @GetMapping("/gyro/{user_id}")
+   public ArrayList<Shoulder> UserGyro(@PathVariable("user_id") String user_id) {
+	   ArrayList<Shoulder> vo = service.UserGyro(user_id);
+	   return vo;
+   }
+   
    @GetMapping("/beacon/{param1}/{param2}")
    public String Beacon(@PathVariable("param1") String user_id,@PathVariable("param2") String beacon) {
       service.UpdateBeacon(user_id, beacon);
@@ -51,11 +57,7 @@ public class RestStateController {
 //	   ArrayList<Arduino> vo = service.ArduinoData();
 //      return vo;
 //   }
-   @GetMapping("/gyro/{user_id}")
-   public ArrayList<Shoulder> UserGyro(@PathVariable("user_id") String user_id) {
-	   ArrayList<Shoulder> vo = service.UserGyro(user_id);
-	   return vo;
-   }
+   
    
    
    
