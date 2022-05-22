@@ -61,7 +61,7 @@ public interface UserMapper {
 	
 	public void UpdateBeacon(String user_id, String beacon);
 	
-	
+	public void ArduinoUpdate(String user_id,  String data_o2, String data_pulse);
 	
 
 }
