@@ -178,7 +178,7 @@ public class UserController {
 	
 	
 	@RequestMapping("/ArduinoUpdate")
-	 public void ArduinoUpdate(@RequestParam("param1") String user_id, @RequestParam("param2") String data_o2, @RequestParam("param3") String data_pulse) {
+	 public String ArduinoUpdate(@RequestParam("param1") String user_id, @RequestParam("param2") String data_o2, @RequestParam("param3") String data_pulse) {
 		 
 	 try {
 		 
@@ -192,6 +192,7 @@ public class UserController {
 		 // TODO Auto-generated catch block
 		 e.printStackTrace();
 		 }
+	 return "redirect:/monitoring";
 	 }
 	
 	

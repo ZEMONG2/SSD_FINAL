@@ -84,6 +84,7 @@
 	height: 100%;
 }
 </style>
+
 </head>
 
 <body>
@@ -200,16 +201,24 @@
 					</div>
 
 					<div data-wow-delay="0.1s">
+					  <button type="submit" class="btn btn-success" style="display:none;" id="userId" value="${vo.user_id}" onclick="UserSensor()">${vo.user_id}</button>
 						<ul class="veritical-layout options">
 							<li class="nav-item me-2">
 								<div class="">
 									<i class="fa-solid fa-heart fa-beat "></i>
 								</div> <!-- 심장박동수(하) -->
+								
+								<div id="heart_spot">
 								<h5 class="m-0 text-uppercase" id="heartbeat">90</h5>
+								</div>
+								
 							</li>
 							<li class="nav-item me-2">
 								<h5 class="m-0 text-uppercase">SPO2</h5> <!-- 산소포화(하) -->
-								<h5 class="m-0 text-uppercase" id="SPO2">90%</h5>
+								
+								<div id="spo2_spot">
+								<h5 class="m-0 text-uppercase" id="SPO2">95%</h5>
+								</div>
 
 							</li>
 							<li class="nav-item me-2">
@@ -424,6 +433,7 @@
 			class="bi bi-arrow-up"></i></a>
 	</div>
 
+
 	<!-- JavaScript Libraries -->
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script
@@ -440,24 +450,8 @@
 	
 	<!-- 온도 실시간 -->
 <script type="text/javascript">
-function getData(){
-$.ajax({
-	type: "GET",
-	url: "${pageContext.request.contextPath}/api/temp/${UserListIdCheck.user_id}",
-	success: function(res){
-		console.log(res)
-		console.log(res[res.length-1].temp)
-        var temp = res[res.length-1].temp
-		var x = document.getElementById("temp_spot");
-x.querySelector("#temp").innerHTML = temp+"C°";
-		
-		/* var state = document.querySelector('#temp')
-		
-		state.innerHTML = "350" */
-			//"<h5 class='m-0 text-uppercase'>"+temp+"</h5>"
-		}
-	})
-}
+
+
 <!-- 자이로 실시간 -->
 function WarningName(){
 	
@@ -465,7 +459,6 @@ function WarningName(){
 		type: "GET",
 		url: "${pageContext.request.contextPath}/api/gyro/${UserListIdCheck.user_id}",
 		success: function(gyroData){
-			console.log(gyroData)
 			console.log(gyroData[gyroData.length-1].gyro)
 	        var gyroCurrentData = gyroData[gyroData.length-1].gyro
 	        
@@ -490,6 +483,7 @@ function WarningName(){
 $(document).ready(function(){
     playTimer = setInterval(function() {
     	getData();
+    	getData2();
     	WarningName();
    }, 3000);
   });
@@ -546,6 +540,151 @@ $(document).ready(function(){
 		  });
 	
 	</script>
+	
+	<script>
+function rand(min, max) {
+	  return Math.floor(Math.random() * (max - min)) + min;
+	}
+	
+	
+	function getData2(){
+		
+		
+	      let data_o2 = rand(95, 100);
+	    	let data_pulse = rand(90, 100);
+	    	console.log(data_o2)
+	    	console.log(data_pulse)  	
+	        
+	  
+
+/* 	  var x1 = document.getElementById("spo2_spot");
+	    	
+	  x1.querySelector("#heartbeat").innerHTML = data_pulse;
+	  
+	  var x2 = document.getElementById("heart_spot");
+
+	  x2.querySelector("#SPO2").innerHTML = data_o2 + "%"; */
+	  
+	    	var x1 = document.getElementById("heartbeat");
+	  x1.innerHTML = data_pulse;
+	    	var x2 = document.getElementById("SPO2");
+	  x2.innerHTML = data_o2 + "%";
+	  
+	}
+
+
+function getData(){
+	
+	
+	
+$.ajax({
+	type: "GET",
+	url: "${pageContext.request.contextPath}/api/temp/${UserListIdCheck.user_id}",
+	success: function(res){
+		console.log(res)
+		console.log(res[res.length-1].temp)
+      var temp = res[res.length-1].temp
+      
+      var x = document.getElementById("temp_spot");
+		  x.querySelector("#temp").innerHTML = temp+"C°";
+		
+		}
+	})
+}
+
+</script>
+	
+	<!-- <script type="text/javascript">
+	
+	function rand(min, max) {
+		  return Math.floor(Math.random() * (max - min)) + min;
+		}
+
+		
+		function UpdateArduino(){
+			var data_o2 = rand(95, 100);
+			 var data_pulse = rand(90, 100);
+			
+			upload();
+			
+				
+		function upload(){
+			$.ajax({
+				type: "GET",
+				url: "${pageContext.request.contextPath}/ArduinoUpdate?param1=${UserListIdCheck.user_id}&param2="+data_o2+"&param3="+data_pulse,
+				success: function(check){
+					console.log(check);
+					
+					}
+				})
+		}
+	}
+		 
+		
+		
+		$(document).ready(function(){
+		    playTimer = setInterval(function() {
+		    	UpdateArduino();
+		   }, 3000);
+		  });
+		
+		
+	</script> -->
+	
+	<!-- 자이로 실시간 -->
+	<!-- <script type="text/javascript">
+	
+	function rand(min, max) {
+		  return Math.floor(Math.random() * (max - min)) + min;
+		}
+	
+	var b_click = function(){
+		var ckck = document.getElementById('userId')
+		ckck.click();
+	}
+	
+	var UserChcek = function(value){
+		console.log("value : "+value);
+
+		var data_o2 = rand(95, 100);
+		 var data_pulse = rand(90, 100);
+		
+		
+	$.ajax({
+		type: "GET",
+		url: "${pageContext.request.contextPath}/api/ArduinoUpdate/${UserListIdCheck.user_id}/"+data_o2+"/"+data_pulse,
+		success: function(ckck){
+			console.log(ckck)
+	        var gyroCurrentData = gyroData[gyroData.length-1].gyro
+	        
+	        if (gyroCurrentData == 0){
+	        	var good = document.getElementById("userGyroGood0");
+	        	good.style.display='';
+	        	var bad = document.getElementById("userGyroBad0");
+	        	bad.style.display='none';
+	        }else if (gyroCurrentData == 1){
+	        	
+	        	var good = document.getElementById("userGyroGood0");
+	        	good.style.display='none';
+	        	var bad = document.getElementById("userGyroBad0");
+	        	bad.style.display='';
+	        	
+	        }
+			}
+		})
+	}
+	
+	
+	$(document).ready(function(){
+	    playTimer = setInterval(function() {
+	    	b_click();
+	   }, 3000);
+	  });
+	</script> -->
+	
+	
+	
+	
 	
 </body>
 

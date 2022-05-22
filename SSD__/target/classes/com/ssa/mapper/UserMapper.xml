@@ -114,6 +114,9 @@
     <update id="UpdateBeacon" parameterType="String">
    	update tb_user set beacon=#{param2} where user_id = #{param1}
    </update>
+    <insert id="ArduinoUpdate" parameterType="String">
+   	insert into tb_wrist values(#{param2},#{param3},now(),#{param1},nextVal(wrist_seq))
+   </insert>
    
    
    

@@ -156,14 +156,12 @@ public class UserServiceImple implements UserService {
 	@Override
 	public ArrayList<Shoulder> UserTemp(String user_id) {
 		ArrayList<Shoulder> list = mapper.UserTemp(user_id);
-		System.out.println("Service : " + list);
 		return list;
 	}
 	
 	@Override
 	public ArrayList<Shoulder> UserGyro(String user_id) {
 		ArrayList<Shoulder> list = mapper.UserGyro(user_id);
-		System.out.println("Service : " + list);
 		return list;
 	}
 	

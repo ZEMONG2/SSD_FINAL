@@ -59,13 +59,34 @@ public class RestStateController {
 //   }
    
    
-   @GetMapping("/arduino/{user_id}")
-   public ArrayList<Shoulder> ArduinoSensor(@PathVariable("user_id") String user_id) {
-	   ArrayList<Shoulder> vo = service.ArduinoSensor(user_id);
-	   return vo;
-   }
+//   @GetMapping("/arduino/{user_id}")
+//   public ArrayList<Shoulder> ArduinoSensor(@PathVariable("user_id") String user_id) {
+//	   ArrayList<Shoulder> vo = service.ArduinoSensor(user_id);
+//	   return vo;
+//   }
    
    
+	
+//	@RequestMapping("/ArduinoUpdate/{param1}")
+//	 public String ArduinoUpdate(@PathVariable("param1") String user_id, @PathVariable("param2") String data_o2, @PathVariable("param3") String data_pulse) {
+//		 
+//	 try {
+//		 
+//		 System.out.println("요청완료");
+//		 System.out.println("산소포화도 : "+ data_o2);
+//		 System.out.println("심박 : "+ data_pulse);
+//		 System.out.println("아이디 : "+ user_id);
+//		 service.ArduinoUpdate(user_id, data_o2, data_pulse);
+//		 
+//	 } catch (Exception e) {
+//		 // TODO Auto-generated catch block
+//		 e.printStackTrace();
+//		 }
+//	 
+//	 return "산소 : "+data_o2 + "심박 : " +data_pulse;
+//	 }
+   
+	
    
    
 }
