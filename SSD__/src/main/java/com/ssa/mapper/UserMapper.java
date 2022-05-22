@@ -60,4 +60,8 @@ public interface UserMapper {
 	public void ChangeState(String user_id, String user_state);
 	
 	public void UpdateBeacon(String user_id, String beacon);
+	
+	
+	
+
 }

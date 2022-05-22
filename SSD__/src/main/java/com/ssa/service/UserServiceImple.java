@@ -185,7 +185,14 @@ public class UserServiceImple implements UserService {
 //		System.out.println("Service : " + list);
 //		return list;
 //	}
-
+	@Override
+	public void ArduinoUpdate(String user_id, String data_o2, String data_pulse) {
+		
+		mapper.ArduinoUpdate(user_id, data_o2, data_pulse);
+		
+	}
+	
+	
 	
 	
 	

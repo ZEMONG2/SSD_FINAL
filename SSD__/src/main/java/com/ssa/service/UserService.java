@@ -59,7 +59,7 @@ public interface UserService {
 
 	   public void UpdateBeacon(String user_id, String beacon);
 	   
-//	   public ArrayList<Arduino> ArduinoData(String user_id);
+	   public void ArduinoUpdate(String user_id, String data_o2, String data_pulse);
 	   
 	   public ArrayList<Shoulder> UserGyro(String user_id);
 }

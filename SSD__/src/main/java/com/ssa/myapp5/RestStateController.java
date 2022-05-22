@@ -59,6 +59,13 @@ public class RestStateController {
 //   }
    
    
+   @GetMapping("/arduino/{user_id}")
+   public ArrayList<Shoulder> ArduinoSensor(@PathVariable("user_id") String user_id) {
+	   ArrayList<Shoulder> vo = service.ArduinoSensor(user_id);
+	   return vo;
+   }
+   
+   
    
    
 }

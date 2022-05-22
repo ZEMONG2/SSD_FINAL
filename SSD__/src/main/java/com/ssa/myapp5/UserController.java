@@ -174,6 +174,27 @@ public class UserController {
 		 }
 	 return "redirect:/change_info";
 	 }
+	
+	
+	
+	@RequestMapping("/ArduinoUpdate")
+	 public void ArduinoUpdate(@RequestParam("param1") String user_id, @RequestParam("param2") String data_o2, @RequestParam("param3") String data_pulse) {
+		 
+	 try {
+		 
+		 System.out.println("요청완료");
+		 System.out.println("산소포화도 : "+ data_o2);
+		 System.out.println("심박 : "+ data_pulse);
+		 System.out.println("아이디 : "+ user_id);
+		 UserService.ArduinoUpdate(user_id, data_o2, data_pulse);
+		 
+	 } catch (Exception e) {
+		 // TODO Auto-generated catch block
+		 e.printStackTrace();
+		 }
+	 }
+	
+	
 	 
 
 }
