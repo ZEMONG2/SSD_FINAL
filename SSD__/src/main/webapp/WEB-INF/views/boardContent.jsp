@@ -13,7 +13,7 @@ pageContext.setAttribute("newLine", "\n");
 
 <head>
 <meta charset="utf-8">
-<title>SSA_monitoring</title>
+<title>SSD_monitoring</title>
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <meta content="" name="keywords">
 <meta content="" name="description">
@@ -112,7 +112,7 @@ pageContext.setAttribute("newLine", "\n");
 						<i class="fa-solid fa-fire-extinguisher"></i>
 
 					</div>
-					<h1 class="m-0 text-primary">SSA</h1>
+					<h1 class="m-0 text-primary">SSD</h1>
 				</a>
 				<button type="button" class="navbar-toggler"
 					data-bs-toggle="collapse" data-bs-target="#navbarCollapse">

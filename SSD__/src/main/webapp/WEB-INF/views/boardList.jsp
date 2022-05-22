@@ -7,7 +7,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>article</title>
+    <title>SSD_article</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -58,7 +58,7 @@
                     <i class="fa-solid fa-fire-extinguisher"></i>
                     
                 </div>
-                <h1 class="m-0 text-primary">SSA</h1>
+                <h1 class="m-0 text-primary">SSD</h1>
             </a>
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>

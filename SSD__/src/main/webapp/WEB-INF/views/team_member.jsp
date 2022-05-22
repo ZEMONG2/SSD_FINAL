@@ -7,7 +7,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>SSA_team_member</title>
+    <title>SSD_team_member</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -59,7 +59,7 @@
                     <i class="fa-solid fa-fire-extinguisher"></i>
                     
                 </div>
-                <h1 class="m-0 text-primary">SSA</h1>
+                <h1 class="m-0 text-primary">SSD</h1>
             </a>
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
@@ -133,10 +133,10 @@
                             <!-- 심장박동수(하드웨어) 아이콘 수정?-->
                                   <button type="button" class="btn btn-outline-light btn-square-md" data-mdb-ripple-color="dark" id = heartbeat>
                                       <!-- 심박값 -->
-                                        <h5 style="margin-bottom:0px; color:#F39C12;">190</h5></button>     
+                                        <h5 style="margin-bottom:0px; color:#F39C12;"id="heartbeatCk${status.index}">0</h5></button>     
                                         <button type="button" class="btn btn-outline-light btn-square-md" data-mdb-ripple-color="dark"  id="SPO2">
                                             <!-- 산소포화도값 -->
-                                            <h5 style="margin-bottom:0px; color:#F39C12;">90%</h5></button>     
+                                            <h5 style="margin-bottom:0px; color:#F39C12;" id="SPO2Ck${status.index}">0%</h5></button>     
                                             <button type="button" class="btn btn-outline-light btn-square-md"  onclick="location.href='/monitoring?user_id=${vo.user_id}'" data-mdb-ripple-color="dark">
                                                 <i
                                     class="fa-solid fa-video"></i></button>  
@@ -232,7 +232,7 @@
 
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-    </div>
+    
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -348,12 +348,43 @@
 	$(document).ready(function(){
 	    playTimer = setInterval(function() {
 	    	b_click();
+	    	getData2();
 	   }, 3000);
 	  });
 	</script>
 	
 	
+	<script>
+function rand(min, max) {
+	  return Math.floor(Math.random() * (max - min)) + min;
+	}
 	
+	
+	function getData2(){
+		
+		
+	      let data_o2 = rand(95, 100);
+	    	let data_pulse = rand(90, 100);
+	    	console.log(data_o2)
+	    	console.log(data_pulse)  	
+	        
+	  
+
+/* 	  var x1 = document.getElementById("spo2_spot");
+	    	
+	  x1.querySelector("#heartbeat").innerHTML = data_pulse;
+	  
+	  var x2 = document.getElementById("heart_spot");
+
+	  x2.querySelector("#SPO2").innerHTML = data_o2 + "%"; */
+	  
+	    	var x1 = document.getElementById("heartbeatCk0");
+	  x1.innerHTML = data_pulse;
+	    	var x2 = document.getElementById("SPO2Ck0");
+	  x2.innerHTML = data_o2 + "%";
+	  
+	}
+	</script>
 	
 	
 </body>
