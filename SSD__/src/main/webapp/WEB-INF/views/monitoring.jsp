@@ -180,10 +180,22 @@
 					</div>
 					<div>
 						<div class="text-start mx-auto mb-5">
+						
 							<!-- 모니터링 대상  받아오기(백) -->
-							<h1 class="mb-3">${UserListIdCheck.user_name}</h1>
-							<span>${UserListIdCheck.user_birthdate}</span> <span>${UserListIdCheck.user_bloodtype}형</span>
-
+						
+                        <!-- 상태가 정상일 경우 -->
+                        <span id="userGyroGood" style="display:">
+						<h1 class="mb-3">${UserListIdCheck.user_name}</h1>
+						<span>${UserListIdCheck.user_birthdate}</span> <span>${UserListIdCheck.user_bloodtype}형</span>
+						</span>
+						<!-- 상태가 비정상일 경우 -->
+                        <span id="userGyroBad" style="display:none">
+                        <h1 class="mb-3" style="color: crimson;"><i class="fa fa-light fa-triangle-exclamation"></i>${UserListIdCheck.user_name}</h1>
+                        <div style="text-align:center">
+                        	<span>${UserListIdCheck.user_birthdate}</span> <span>${UserListIdCheck.user_bloodtype}형</span>
+                        </div>
+                        </span>
+							
 						</div>
 					</div>
 
@@ -446,9 +458,39 @@ x.querySelector("#temp").innerHTML = temp+"C°";
 		}
 	})
 }
+<!-- 자이로 실시간 -->
+function WarningName(){
+	
+	$.ajax({
+		type: "GET",
+		url: "${pageContext.request.contextPath}/api/gyro/${UserListIdCheck.user_id}",
+		success: function(gyroData){
+			console.log(gyroData)
+			console.log(gyroData[gyroData.length-1].gyro)
+	        var gyroCurrentData = gyroData[gyroData.length-1].gyro
+	        
+	        if (gyroCurrentData == 0){
+	        	var good = document.getElementById("userGyroGood");
+	        	good.style.display='';
+	        	var bad = document.getElementById("userGyroBad");
+	        	bad.style.display='none';
+	        }else if (gyroCurrentData == 1){
+	        	
+	        	var good = document.getElementById("userGyroGood");
+	        	good.style.display='none';
+	        	var bad = document.getElementById("userGyroBad");
+	        	bad.style.display='';
+	        	
+	        }
+			}
+		})
+}
+
+
 $(document).ready(function(){
     playTimer = setInterval(function() {
     	getData();
+    	WarningName();
    }, 3000);
   });
 
@@ -504,8 +546,6 @@ $(document).ready(function(){
 		  });
 	
 	</script>
-
-	
 	
 </body>
 
