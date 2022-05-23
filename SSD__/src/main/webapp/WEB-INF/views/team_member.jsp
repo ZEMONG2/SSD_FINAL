@@ -378,9 +378,9 @@ function rand(min, max) {
 
 	  x2.querySelector("#SPO2").innerHTML = data_o2 + "%"; */
 	  
-	    	var x1 = document.getElementById("heartbeatCk0");
+	    	var x1 = document.getElementById("heartbeatCk1");
 	  x1.innerHTML = data_pulse;
-	    	var x2 = document.getElementById("SPO2Ck0");
+	    	var x2 = document.getElementById("SPO2Ck1");
 	  x2.innerHTML = data_o2 + "%";
 	  
 	}
