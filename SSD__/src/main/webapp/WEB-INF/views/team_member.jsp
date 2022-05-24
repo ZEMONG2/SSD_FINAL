@@ -125,7 +125,7 @@
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s" style="width:auto; margin-left:50px; margin-right:50px;">
                 <div class="team-item rounded overflow-hidden">
                     <div class="position-relative" style="display:flex; justify-content: center;margin-top: 20px; ">
-                        <img class="img-fluid" src="resources/img/team-${status.count}.jpg" alt="" width="200px">
+                        <img class="img-fluid" src="resources/img/team_monitor${status.count}.jpg" alt="" width="200px">
                         
                         
                         <div
@@ -378,14 +378,13 @@ function rand(min, max) {
 
 	  x2.querySelector("#SPO2").innerHTML = data_o2 + "%"; */
 	  
-	    	var x1 = document.getElementById("heartbeatCk1");
+	    	var x1 = document.getElementById("heartbeatCk0");
 	  x1.innerHTML = data_pulse;
-	    	var x2 = document.getElementById("SPO2Ck1");
+	    	var x2 = document.getElementById("SPO2Ck0");
 	  x2.innerHTML = data_o2 + "%";
 	  
 	}
 	</script>
-	
 	
 </body>
 

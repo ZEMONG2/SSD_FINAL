@@ -175,7 +175,7 @@
 					<div>
 						<div data-wow-delay="0.1s">
 							<!-- 모니터링 대상 사진(백) -->
-							<img src="resources/img/team-1.jpg" alt=""
+							<img src="resources/img/team_monitor1.jpg" alt=""
 								style="width: 200px; height: 200px;">
 						</div>
 					</div>
@@ -267,7 +267,7 @@
 											<div class="video-container"
 												style="display: flex; justify-content: center; align-items: center; height: 542px;">
 												<div class="video-play-area">
-													<img src="http://172.30.1.47:5000/stream.mjpg" />
+													<img src="http://192.168.110.39:5000/stream.mjpg" />
 												</div>
 											</div>
 										</div>
