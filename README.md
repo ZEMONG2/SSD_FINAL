@@ -67,5 +67,5 @@ SSD
 ![image](https://user-images.githubusercontent.com/97678826/173374078-b2b1188e-6697-48ea-af2e-4750931f70cb.png)
 
 ## 기능 흐름도
-
+![image](https://user-images.githubusercontent.com/97678826/173374901-82a7f3dc-37a0-49bb-9836-d2c4ed9ae9cf.png)
 
