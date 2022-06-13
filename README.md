@@ -79,4 +79,4 @@ SSD
 
 ## 활용사진예시
 * 웹
-
+![image](https://user-images.githubusercontent.com/97678826/173380946-75693f0a-1917-413d-a943-b349288864b7.png)
