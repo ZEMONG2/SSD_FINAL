@@ -82,7 +82,7 @@ SSD
 ![image](https://user-images.githubusercontent.com/97678826/173380946-75693f0a-1917-413d-a943-b349288864b7.png)
 
 ## 완성제품
-* 손목 장치
+* 손목장치
 ![image](https://user-images.githubusercontent.com/97678826/173381717-c08d9fb7-6415-4a71-bde0-dbbb4192ff60.png)
-* 어깨 장치
+
 ![image](https://user-images.githubusercontent.com/97678826/173381652-e78157f0-d3ca-4510-943f-b303942c0f12.png)
