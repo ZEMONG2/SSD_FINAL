@@ -71,3 +71,8 @@ SSD
 
 ## 사용 부품
 ![image](https://user-images.githubusercontent.com/97678826/173375252-34a31414-759e-444f-871b-24fedab686f8.png)
+
+## 제품 회로도
+*어깨 센서
+
+*손목 센서
