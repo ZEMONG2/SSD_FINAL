@@ -75,7 +75,11 @@ SSD
 ## 제품 회로도
 * 어깨 센서
 
+![image](https://user-images.githubusercontent.com/97678826/173528344-1aa939ae-658f-4b68-b685-f9af011c4c26.png)
+
 * 손목 센서
+
+![image](https://user-images.githubusercontent.com/97678826/173528381-f9f30106-7aff-463f-9b66-f4aa0af80671.png)
 
 ## 활용사진예시
 * 웹
